@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="./Styles/swiper-bundle.min.css">
   <link rel="stylesheet" href="./Styles/style.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./Styles/mobile.css">
   <link rel="shortcut icon" href="./Assets/logoM.png" type="image/x-icon">
 
 </head>
@@ -19,29 +23,49 @@
         <img src="./Assets/logoM.png" alt="" />
       </div>
       <div class="header-links">
-        <ul>
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#About">About</a></li>
-          <li><a href="#Skills">Skills</a></li>
-          <li><a href="#Portfolio">Portfolio</a></li>
-          <li><a href="#Services">Services</a></li>
-          <li><a href="#">Blogs</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Login</a></li>
+        <ul class="nav-list activee sidebar " id="navList">
+          <li onclick=hideSidebar() class="menu-icon"><i class="fa-solid fa-xmark"></i></li>
+          <li class="active mobile-links" onclick="clicked_links(this)"><a href="#">Home</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links"><a href="#About">About</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links"><a href="#Skills">Skills</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links"><a href="#Portfolio">Portfolio</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links"><a href="#Services">Services</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links"><a href="#Blogs">Blogs</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links"><a href="#Contact">Contact</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links"><a href="#sigin">Login</a></li>
           <li class="active">
             <a href="#"><i class="bx bxs-moon"></i></a>
           </li>
         </ul>
+        <ul class="nav-list activee" id="navList">
+          <li onclick="clicked_link(this)" class="hideOnMobile active"><a href="#">Home</a></li>
+          <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#About">About</a></li>
+          <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Skills">Skills</a></li>
+          <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Portfolio">Portfolio</a></li>
+          <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Services">Services</a></li>
+          <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Blogs">Blogs</a></li>
+          <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Contact">Contact</a></li>
+          <li onclick="clicked_links(this)" class="hideOnMobile"><a href="#sigin">Login</a></li>
+          <li class="hideOnMobile active">
+            <a href="#"><i class="bx bxs-moon"></i></a>
+          </li>
+          <li onclick="showSidebar()" class="menu-icon"><i class='bx bx-menu'></i></li>
+        </ul>
       </div>
+
     </div>
   </nav>
   <main>
     <!--  Home Page  -->
-    <section id="home">
+    <section id="home" class="home">
+      <div class="home-right">
+        <img src="./Assets/profile.JPG" alt="">
+        <div></div>
+      </div>
       <div class="home-left">
         <div class="top">
-          <p>Hello mate! 👋 <br> I’m Joseph MUGISHA</br></p>
-          <p><span style="color: var(--primary-color); font-size: 2rem; font-weight: 500;">Full-Stack
+          <p>Hello mate! 👋 <br> <span class="joseph">I’m Joseph MUGISHA</span></br></p>
+          <p class="Full-Stack"><span class="full">Full-Stack
               Developer</span><br>With a high level of experience, I can create beautiful, functional, and
             user-friendly websites</p>
         </div>
@@ -58,13 +82,10 @@
           </div>
         </div>
       </div>
-      <div class="home-right">
-        <img src="./Assets/profile.JPG" alt="">
-        <div></div>
-      </div>
+
     </section>
     <!--  About Page  -->
-    <section id="About">
+     <section id="About">
       <div class="about-left">
       </div>
       <div class="about-right">
@@ -157,7 +178,7 @@
           <div class="end">
             <div class="header">
               <div class="icon"><i class='bx bx-code-alt'></i></div>
-              <div class="title">
+              <div class="titlee">
                 <p>Frontend developer</p>
                 <p>3 Years Experience</p>
               </div>
@@ -217,7 +238,7 @@
           <div class="end">
             <div class="header">
               <div class="icon"><i class='bx bx-code-alt'></i></div>
-              <div class="title">
+              <div class="titlee">
                 <p>Backend developer</p>
                 <p>1 Years Experience</p>
               </div>
@@ -620,65 +641,217 @@
                 <span class="job">Software Engineer</span>
               </div>
               <div class="testminial-desc">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  beatae sequi? Lorem ipsu consectetur adipisicing e.  beatae sequi?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. beatae sequi? Lorem ipsu consectetur
+                  adipisicing e. beatae sequi?</p>
               </div>
               <div class="button">
                 <button class="btn">More</button>
               </div>
+            </div>
+          </div>
+          <div class="testminial">
+            <div class="profilecard">
+              <div class="pro">
+                <div class="first"></div>
+              </div>
+              <div class="image">
+                <img src="./Assets/profile.JPG" alt="">
+              </div>
+              <div class="text_data">
+                <span class="name">Joseph MUGISHA</span>
+                <span class="job">Software Engineer</span>
+              </div>
+              <div class="testminial-desc">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. beatae sequi? Lorem ipsu consectetur
+                  adipisicing e. beatae sequi?</p>
+              </div>
+              <div class="button">
+                <button class="btn">More</button>
               </div>
             </div>
-            <div class="testminial">
-              <div class="profilecard">
-                <div class="pro">
-                  <div class="first"></div>
-                </div>
-                <div class="image">
-                  <img src="./Assets/profile.JPG" alt="">
-                </div>
-                <div class="text_data">
-                  <span class="name">Joseph MUGISHA</span>
-                  <span class="job">Software Engineer</span>
-                </div>
-                <div class="testminial-desc">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  beatae sequi? Lorem ipsu consectetur adipisicing e.  beatae sequi?</p>
-                </div>
-                <div class="button">
-                  <button class="btn">More</button>
-                </div>
-                </div>
+          </div>
+          <div class="testminial">
+            <div class="profilecard">
+              <div class="pro">
+                <div class="first"></div>
               </div>
-              <div class="testminial">
-                <div class="profilecard">
-                  <div class="pro">
-                    <div class="first"></div>
-                  </div>
-                  <div class="image">
-                    <img src="./Assets/profile.JPG" alt="">
-                  </div>
-                  <div class="text_data">
-                    <span class="name">Joseph MUGISHA</span>
-                    <span class="job">Software Engineer</span>
-                  </div>
-                  <div class="testminial-desc">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  beatae sequi? Lorem ipsu consectetur adipisicing e.  beatae sequi?</p>
-                  </div>
-                  <div class="button">
-                    <button class="btn">More</button>
-                  </div>
-                  </div>
-                </div>
+              <div class="image">
+                <img src="./Assets/profile.JPG" alt="">
+              </div>
+              <div class="text_data">
+                <span class="name">Joseph MUGISHA</span>
+                <span class="job">Software Engineer</span>
+              </div>
+              <div class="testminial-desc">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. beatae sequi? Lorem ipsu consectetur
+                  adipisicing e. beatae sequi?</p>
+              </div>
+              <div class="button">
+                <button class="btn">More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!--  Contact Page  -->
+    <section id="Contact">
+      <h3 class="title">Contact<span> Me</span></h3>
+      <div class="contacts">
+        <div class="left">
+          <div class="item">
+            <div class="icon">
+              <i class='bx bxs-phone-call'></i>
+            </div>
+            <div class="content">
+              <h3>Call</h3>
+              <h6>+250792418795</h6>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon">
+              <i class='bx bxs-envelope'></i>
+            </div>
+            <div class="content">
+              <h3>Email</h3>
+              <h6>mugishajoseph092@gmail.com</h6>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon">
+              <i class='bx bxs-location-plus'></i>
+            </div>
+            <div class="content">
+              <h3>Location</h3>
+              <h6>Kigali-Rwanada</h6>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="input">
+            <div class="long">
+              <div class="inputbox">
+                <input type="text" required="required">
+                <span>First name</span>
+              </div>
+              <div class="inputbox">
+                <input type="text" required="required">
+                <span>Last Name</span>
+              </div>
+            </div>
+            <div class="long">
+              <div class="inputbox">
+                <input class="" id="input" type="text" required="required">
+                <span>Email</span>
+              </div>
+              <div class="inputbox">
+                <input id="input" type="number" required="required">
+                <span>Telephone</span>
+              </div>
+            </div>
+            <div class="inputbox">
+              <textarea class="in" name="" id="" cols="30" rows="10"></textarea>
+              <span>
+                <p>Message</p>
+              </span>
+            </div>
+            <button class="btn in">
+              <p>Contact Me</p><i class='bx bx-send'></i>
+            </button>
           </div>
         </div>
       </div>
     </section>
-    <!--  Contact Page  -->
-    <section></section>
     <!--  Login Page  -->
+    <section id="sigin">
+      <h3 class="title">Sign <span>In</span></h3>
+      <div class="sigin">
+        <div class="left">
+          <div class="image"></div>
+        </div>
+        <div class="right">
+          <div class="sign-content">
+            <div class="top">
+              <div class="logo">
+                <img src="./Assets/logoM.png" alt="">
+              </div>
+              <p class="welcom">Welcome back! 👋</p>
+              <p class="login">Login with your account!</p>
+              <div class="google">
+                <img src="./Assets/7123025_logo_google_g_icon.png" alt="" width="33px">
+                <p>Continue with Google</p>
+              </div>
+            </div>
+            <div class="or">
+              <div class="line"></div>
+              <p>or</p>
+              <div class="line"></div>
+            </div>
+            <div class="bottomm">
+              <div class="inputbx">
+                <label for="email">Email </label>
+                <input type="email" name="" id="email">
+              </div>
+              <div class="inputbx">
+                <label for="password">Password </label>
+                <input type="password" name="" id="password">
+              </div>
+              <button>Sign in</button>
+              <p><u>Forget password?</u></p>
+              <p>Don’t you have an account ? <u>Sign Up Now</u></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer></footer>
+  <footer>
+    <div class="subscribe">
+      <p>Subscribe To Our Updates</p>
+      <div class="in">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <button>Subscribe now</button>
+      </div>
+    </div>
+    <div class="footer-logo">
+      <div class="f-left">
+        <div class="logo">
+          <img src="./Assets/logoM.png" alt="">
+        </div>
+        <div class="get">
+          <p>Get In Touch</p>
+          <div class="social">
+            <i class='bx bxl-facebook-circle'></i>
+            <i class='bx bxl-instagram-alt'></i>
+            <i class='bx bxl-linkedin-square'></i>
+            <i class='bx bxl-github'></i>
+          </div>
+        </div>
+      </div>
+      <div class="links">
+        <ul class="nav-list activee" id="navList">
+          <li><a href="#">Home</a></li>
+          <li><a href="#Skills">Skills</a></li>
+          <li><a href="#Portfolio">Portfolio</a></li>
+          <li><a href="#Services">Services</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Blogs">Blogs</a></li>
+          <li><a href="#Contact">Contact</a></li>
+          <li><a href="#sigin">Login</a></li>
+          <li>
+            <a href="#"><i class="bx bxs-moon"></i></a>
+          </li>
+          <li><i class='bx bx-menu'></i></li>
+        </ul>
+        <p id="copyright"></p>
+      </div>
+    </div>
+  </footer>
 </body>
 <script src="./Script/swiper-bundle.min.js"></script>
 <script src="./Script/swipper.js"></script>
-<script src="/Script/script.js"></script>
+<script src="./Script/script.js"></script>
 
 </html>
