@@ -23,6 +23,8 @@ html {
 body {
   width: 100vw;
   overflow-x: hidden;
+  margin: 0;
+  scroll-behavior: smooth;
 }
 
 /*==================Navigation bar==================*/
@@ -32,9 +34,9 @@ nav {
   box-shadow: 0 4px 2px -2px rgba(146, 146, 146, 0.2);
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   background-color: var(--secondText-color);
-  z-index: 2;
+  z-index: 4;
 }
 
 .nav-container {
@@ -112,7 +114,7 @@ main {
   margin: auto 6%;
   margin-top: 140px;
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .nav-list {
     transition: all 0.2s ease-in;
   }
@@ -161,8 +163,6 @@ main {
   color: var(--primary-color);
   font-size: 2rem;
   font-weight: 500;
-}
-.home-left .top .Full-Stack .full {
 }
 
 .home-left .top p:nth-child(2) {
@@ -246,7 +246,7 @@ main {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 } */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   #home {
     flex-direction: column;
     width: 100vh;
@@ -799,7 +799,7 @@ h3.title span {
   font-size: 1rem;
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 900px) {
   .swiper-slide:first-child {
     transition: transform 100ms;
   }
@@ -842,7 +842,7 @@ h3.title span {
   align-items: center;
 }
 #Testimonials .testminial {
-  width: 30%;
+  width: 100%;
   padding: 35px;
   border-radius: 20px;
 }
@@ -981,7 +981,7 @@ h3.title span {
 #Contact {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding-top: 86px;
 }
@@ -990,16 +990,29 @@ h3.title span {
 }
 .contacts {
   display: flex;
+  justify-content: space-between;
   width: 100%;
 }
 .left {
   display: flex;
   flex-direction: column;
 }
+.contacts .left{
+  margin-bottom: 20px;
+}
 .left .item {
   display: flex;
   align-items: center;
-  margin: 20px;
+  width: 100%;
+  margin: 0px;
+  padding: 0;
+  gap: 0;
+}
+.left .item h3{
+  margin: 0%;
+}
+.left .item h6{
+  margin: 0%;
 }
 .left .item .icon {
   font-size: 3rem;
@@ -1008,7 +1021,6 @@ h3.title span {
 }
 .left .item .content {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
 }
 .left .item .content h3 {
@@ -1038,6 +1050,7 @@ div.right .input .btn {
   width: auto;
   border: none;
 }
+
 .inputbox {
   position: relative;
   width: 100%;
@@ -1060,6 +1073,7 @@ textarea {
 .inputbox span {
   position: absolute;
   left: 0;
+  top: 2px;
   padding: 10px;
   pointer-events: none;
   font-size: 0.7em;
@@ -1138,7 +1152,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 90vh;
 }
 #sigin .sigin .left {
   width: 50%;
@@ -1280,13 +1294,13 @@ footer .subscribe {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 40px;
   border-radius: 10px;
 }
 footer .subscribe p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--secondText-color);
   padding-bottom: 20px;
+  width: fit-content;
 }
 footer .subscribe .in {
   width: 80%;
@@ -1326,8 +1340,6 @@ footer .footer-logo .logo img {
 footer .footer-logo .f-left {
   display: flex;
   align-items: end;
-}
-footer .footer-logo .f-left .get {
 }
 footer .footer-logo .f-left .get p {
   text-decoration: underline;

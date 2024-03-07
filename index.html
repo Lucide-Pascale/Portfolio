@@ -47,7 +47,7 @@
           <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Contact">Contact</a></li>
           <li onclick="clicked_links(this)" class="hideOnMobile"><a href="#sigin">Login</a></li>
           <li class="hideOnMobile active">
-            <a href="#"><i class="bx bxs-moon"></i></a>
+            <i class="bx bxs-moon" id="darkModeToggle"></i></a>
           </li>
           <li onclick="showSidebar()" class="menu-icon"><i class='bx bx-menu'></i></li>
         </ul>
@@ -128,7 +128,7 @@
             </div>
           </div>
           <div class="btn">
-            <button><span>Download CV</span><span><i class='bx bx-download'></i></span></button>
+            <button id="downloadButton"><span>Download CV</span><span><i class='bx bx-download'></i></span></button>
           </div>
         </div>
       </div>
@@ -840,14 +840,12 @@
           <li><a href="#Blogs">Blogs</a></li>
           <li><a href="#Contact">Contact</a></li>
           <li><a href="#sigin">Login</a></li>
-          <li>
-            <a href="#"><i class="bx bxs-moon"></i></a>
-          </li>
-          <li><i class='bx bx-menu'></i></li>
         </ul>
-        <p id="copyright"></p>
+        
       </div>
+      
     </div>
+    <p id="copyright"></p>
   </footer>
 </body>
 <script src="./Script/swiper-bundle.min.js"></script>
