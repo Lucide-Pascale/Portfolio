@@ -107,4 +107,15 @@ function postComment() {
 }
 
 
+const redirectButton = document.getElementById('redirectButton');
+
+    // Add a click event listener to the button
+    redirectButton.addEventListener('click', function() {
+      // Specify the URL of the page you want to redirect to
+      const targetPageURL = './singleBlog.html';
+
+      // Redirect to the specified URL
+      window.location.href = targetPageURL;
+    });
+
 
