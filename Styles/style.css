@@ -1093,7 +1093,7 @@ textarea {
   text-transform: uppercase;
   transition: 0.5s;
 }
-.inputbox span p {
+.inputbox span{
   position: absolute;
   left: 0;
   padding: 10px;
@@ -1112,14 +1112,14 @@ textarea {
   background-color: var(--secondText-color);
   color: var(--primary-color);
 }
-.inputbox textarea:valid ~ p,
-.inputbox textarea:focus ~ span p {
-  color: var(--primary-color);
-  transform: translateX(10px) translateY(-16px);
-  font-size: 0.7rem;
-  padding: 0 10px;
-  background: var(--secondText-color);
-  border-radius: 3px;
+.inputbox textarea:valid ~ span p,
+.inputbox textarea:focus ~ span p{
+    color: var(--primary-color);
+    transform: translateX(10px) translateY(-25px);
+    font-size: 0.8em;
+    padding: 0 10px;
+    background: var(--secondText-color);
+    border-radius: 3px;
 }
 .inputbox input:valid,
 .inputbox input:focus {

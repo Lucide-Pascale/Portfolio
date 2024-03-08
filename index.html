@@ -744,7 +744,7 @@
                   <input type="text" required="required" id="contact-lname" onkeyup="validatelName()">
                   <span>Last Name</span>
                   <p id="lname-error"
-                    style="position: absolute; z-index: 100; bottom: -3px; right: 8px; background-color: #fff; font-size: .7rem; color: red; padding: 0 5px;">
+                    style="position: absolute; z-index: 100; bottom: 2px; right: 8px; background-color: #fff; font-size: .7rem; color: red; padding: 0 5px;">
                   </p>
                 </div>
               </div>
@@ -753,25 +753,23 @@
                   <input class="" id="contact-email" onkeyup="validateEmail()" type="text" required="required">
                   <span>Email</span>
                   <p id="email-error"
-                    style="position: absolute; z-index: 100; bottom: -3px; right: 10px; background-color: #fff; font-size: .7rem; color: red;">
+                    style="position: absolute; z-index: 100; bottom: 2px; right: 10px; background-color: #fff; font-size: .7rem; color: red;">
                   </p>
                 </div>
                 <div class="inputbox">
                   <input id="contact-phone" onkeyup="validatePhone()" type="number" required="required">
                   <span>Telephone</span>
                   <p id="phone-error"
-                    style="position: absolute; z-index: 100; bottom: -3px; right: 10px; background-color: #fff; font-size: .7rem; color: red;">
+                    style="position: absolute; z-index: 100; bottom: 2px; right: 10px; background-color: #fff; font-size: .7rem; color: red;">
                   </p>
                 </div>
               </div>
               <div class="inputbox">
                 <textarea class="in" name="message" onkeyup="validateMessage()" id="contact-message" cols="30" rows="10"></textarea>
                 <p id="message-error"
-                  style="position: absolute; z-index: 100; bottom: -3px; right: 10px; background-color: #fff; font-size: .7rem; color: red;">
+                  style="position: absolute; z-index: 100; bottom: 2px; right: 10px; background-color: #fff; font-size: .7rem; color: red;">
                 </p>
-                <span>
-                  <p>Message</p>
-                </span>
+                <span><p>Message</p></span>
               </div>
               <button class="btn in" id="btn">
                 <p>Contact Me</p><i class='bx bx-send'></i>
@@ -812,11 +810,13 @@
             <div class="bottomm">
               <div class="inputbx">
                 <label for="email">Email </label>
-                <input type="email" name="" id="email">
+                <input type="email" name="" id="contact-emaill" onkeyup="validateEmaill()">
+                <p id="emailError" style="font-size: .5rem; color: red;"></p>
               </div>
               <div class="inputbx">
                 <label for="password">Password </label>
-                <input type="password" name="" id="password">
+                <input type="password" name="" id="password"  onkeyup="passwordValidation()">
+                <p id="passwordError" style="font-size: .5rem; color: red;"></p>
               </div>
               <button>Sign in</button>
               <p><u>Forget password?</u></p>
@@ -854,7 +854,7 @@
               </div>
               <div class="inputbx">
                 <label for="password">Password </label>
-                <input type="password" name="" id="password">
+                <input type="password" name="" >
               </div>
               <button>Sign up</button>
               <p>Already a member? <u onclick="hide()">Login</u></p>

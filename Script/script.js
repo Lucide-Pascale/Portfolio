@@ -231,3 +231,51 @@ function hide() {
   var signinSection = document.getElementById("login");
   signinSection.classList.toggle("hidLogin"); // Corrected this line
 }
+
+const passwordValidation = () => {
+  var passwordError=document.getElementById("passwordError");
+  let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/;
+  var password = document.getElementById("password").value;
+
+  if (password.length < 8 || password.length > 15) {
+    passwordError.innerHTML="Error: Password must be between 8 and 15 characters.";
+    return;
+  }
+
+  if (!/(?=.*[a-z])/.test(password)) {
+    passwordError.innerHTML="Error: Password must contain at least one lowercase letter.";
+    return;
+  }
+
+  if (!/(?=.*[A-Z])/.test(password)) {
+    passwordError.innerHTML="Error: Password must contain at least one uppercase letter.";
+    return;
+  }
+
+  if (!/(?=.*\d)/.test(password)) {
+    passwordError.innerHTML="Error: Password must contain at least one digit.";
+    return;
+  }
+
+  if (!/(?=.*[@.#$!%*?&])/.test(password)) {
+    passwordError.innerHTML="Error: Password must contain at least one special character among @.#$!%*?&.";
+    return;
+  }
+
+  passwordError.innerHTML="Password is valid.";
+};
+
+function validateEmaill() {
+  var email = document.getElementById("contact-emaill").value;
+  var errorMessage = document.getElementById("emailError")
+  if (email.length == 0) {
+    errorMessage.innerHTML = `<i class='bx bxs-x-circle'>Email is required`;
+    return false;
+  }
+  if (!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+    errorMessage.innerHTML = `<i class='bx bxs-x-circle'>Invalid email`;
+    return false;
+  }
+  errorMessage.innerHTML = '<i class="fas fa-check-circle" style="color:green; ">';
+  return true;
+}
