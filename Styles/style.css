@@ -1065,9 +1065,21 @@ textarea {
   outline: none;
   font-size: 1em;
   color: var(--seconadry-color);
-  text-transform: uppercase;
   transition: 0.5s;
   margin-bottom: 20px;
+}
+.btn:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.btn:disabled p {
+  color: #666;
+}
+
+.btn:disabled i {
+  color: #666;
 }
 
 .inputbox span {
@@ -1140,6 +1152,7 @@ textarea {
 }
 .btn.in p {
   padding-right: 10px;
+  margin: 5px;
 }
 #sigin {
   width: 100%;
@@ -1152,12 +1165,19 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 110vh;
 }
 #sigin .sigin .left {
   width: 50%;
   height: 100%;
   border-radius: 40px;
+}
+.hidden{
+  display: none;
+  background-color: #0d2030;
+}
+.hidLogin{
+  display: none;
 }
 #sigin {
   display: flex;
@@ -1188,7 +1208,6 @@ textarea {
 }
 .sigin .right .sign-content {
   width: 70%;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
@@ -1295,6 +1314,7 @@ footer .subscribe {
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
+  padding-bottom: 40px;
 }
 footer .subscribe p {
   font-size: 1.5rem;
@@ -1332,6 +1352,7 @@ footer .footer-logo {
 footer .footer-logo .logo {
   background-color: var(--secondText-color);
   padding: 2px;
+  margin-right: 10px;
   border-radius: 5px;
 }
 footer .footer-logo .logo img {
