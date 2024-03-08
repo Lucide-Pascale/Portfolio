@@ -206,7 +206,6 @@ function validateMessage() {
     '<i class="fas fa-check-circle" style="color:green;">';
   return true;
 }
-console.log(validateName());
 function validateform() {
   if (
     !validateName() ||
