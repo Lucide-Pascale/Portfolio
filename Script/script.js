@@ -78,44 +78,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-function postComment() {
-  var commentInput = document.getElementById("editor");
-  var namesInput = document.getElementById("names");
-
-  var commentList = document.getElementById("comments-container");
-  var commentText = commentInput.value;
-  var nameText = namesInput.value;
-  commentInput.value = "";
-  console.log(commentText);
-
-  var newComment = document.createElement("li");
-  newComment.innerHTML = `    <div id="comments-container">
-  <div id="comment-item" style="background-color: var(--back-color); border-radius: 2px; padding: 5px; display: flex; align-items: center; width: 30%; margin: 10px 0px;">
-      <div class="imagec" style="width: 60px;">
-          <img src="./Assets/profile.JPG" alt="" style="width: 100%; border-radius: 50%;">
-      </div>
-      <div class="comment-content">
-          <div class="div" style="">
-              <p style="margin: 3px; font-size: .8rem;">${nameText}</p>
-              <p style="margin: 3px; font-size: .6rem;">12:00pm 1 jan 2024</p>
-          </div>
-          <p style="margin: 3px; font-size: .7rem;">${commentText}</p>
-      </div>
-  </div>`;
-  commentList.appendChild(newComment);
-}
-
-const redirectButton = document.getElementById("redirectButton");
-
-// Add a click event listener to the button
-redirectButton.addEventListener("click", function () {
-  // Specify the URL of the page you want to redirect to
-  const targetPageURL = "./singleBlog.html";
-
-  // Redirect to the specified URL
-  window.location.href = targetPageURL;
-});
-
 var nameError = document.getElementById("name-error");
 var lnameError = document.getElementById("lname-error");
 var phoneError = document.getElementById("phone-error");
@@ -185,7 +147,8 @@ function validateEmail() {
     emailError.innerHTML = `<i class='bx bxs-x-circle'>Invalid email`;
     return false;
   }
-  emailError.innerHTML = '<i class="fas fa-check-circle" style="color:green; ">';
+  emailError.innerHTML =
+    '<i class="fas fa-check-circle" style="color:green; ">';
   return true;
 }
 function validateMessage() {
@@ -215,12 +178,10 @@ function validateform() {
   ) {
     submitError.style.display = "block";
     submitError.innerHTML = "Please fix error";
-      submitError.style.display = "none";
+    submitError.style.display = "none";
     return false;
   }
 }
-
-
 
 const signup = document.getElementById("Signup");
 
@@ -233,41 +194,45 @@ function hide() {
 }
 
 const passwordValidation = () => {
-  var passwordError=document.getElementById("passwordError");
-  let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/;
+  var passwordError = document.getElementById("passwordError");
+  let regex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/;
   var password = document.getElementById("password").value;
 
   if (password.length < 8 || password.length > 15) {
-    passwordError.innerHTML="Error: Password must be between 8 and 15 characters.";
+    passwordError.innerHTML = `<i class='bx bxs-x-circle'>Password must be between 8 and 15 characters.`;
     return;
   }
 
   if (!/(?=.*[a-z])/.test(password)) {
-    passwordError.innerHTML="Error: Password must contain at least one lowercase letter.";
+    passwordError.innerHTML =
+      `<i class='bx bxs-x-circle'>Password must contain at least one lowercase letter.`;
     return;
   }
 
   if (!/(?=.*[A-Z])/.test(password)) {
-    passwordError.innerHTML="Error: Password must contain at least one uppercase letter.";
+    passwordError.innerHTML =
+      `<i class='bx bxs-x-circle'>Password must contain at least one uppercase letter.`;
     return;
   }
 
   if (!/(?=.*\d)/.test(password)) {
-    passwordError.innerHTML="Error: Password must contain at least one digit.";
+    passwordError.innerHTML = `<i class='bx bxs-x-circle'>Password must contain at least one digit.`;
     return;
   }
 
   if (!/(?=.*[@.#$!%*?&])/.test(password)) {
-    passwordError.innerHTML="Error: Password must contain at least one special character among @.#$!%*?&.";
+    passwordError.innerHTML =
+      `Password must contain at least one special character among @.#$!%*?&.`;
     return;
   }
 
-  passwordError.innerHTML="Password is valid.";
+  passwordError.innerHTML = `'<i class="fas fa-check-circle" style="color:green; ">`;
 };
 
 function validateEmaill() {
   var email = document.getElementById("contact-emaill").value;
-  var errorMessage = document.getElementById("emailError")
+  var errorMessage = document.getElementById("emailError");
   if (email.length == 0) {
     errorMessage.innerHTML = `<i class='bx bxs-x-circle'>Email is required`;
     return false;
@@ -276,6 +241,7 @@ function validateEmaill() {
     errorMessage.innerHTML = `<i class='bx bxs-x-circle'>Invalid email`;
     return false;
   }
-  errorMessage.innerHTML = '<i class="fas fa-check-circle" style="color:green; ">';
+  errorMessage.innerHTML =
+    '<i class="fas fa-check-circle" style="color:green; ">';
   return true;
 }

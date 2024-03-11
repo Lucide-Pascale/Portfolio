@@ -1,7 +1,10 @@
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     centeredSlides: false,
-    slidesPerGroupSkip: 1,
+
+    slidesPerGroup: 1,
+    slidesPerGroupSkip: 0, 
+    slidesGrab:true,
     keyboard: {
         enabled: true,
     },
