@@ -366,7 +366,6 @@ body.collapsed .expand-btn i {
 
 .table-widget {
   border-radius: 1rem;
-  background: var(--table-background);
   padding: 1.5rem;
   border: 2px solid var(--gray-background);
   border: 2px solid var(--gray-background);
@@ -383,7 +382,7 @@ body.collapsed .expand-btn i {
 }
 
 .table-widget table {
-  max-width: fit-content;
+  width: 100%;
   border-collapse: collapse;
   padding: 2.5rem;
 }
@@ -533,4 +532,63 @@ td i{
 }
 td:nth-child(5) i{
   color: rgb(253, 96, 96);
+}
+
+/* dashboard notification */
+.notification-content{
+  display: flex;
+  flex-direction: column;
+}
+.status--New_User{
+  background-color: #2ECC71;
+  width: fit-content;
+  padding: 5px 10px;
+  color: var(--secondText-color);
+  margin-bottom:10px;
+}
+.status--Post{
+  background-color: #2ec1cc;
+  width: fit-content;
+  padding: 5px 10px;
+  color: var(--secondText-color);
+  margin-bottom:10px;
+}
+.status--Like{
+  background-color: var(--primary-color);
+  width: fit-content;
+  padding: 5px 10px;
+  color: var(--secondText-color);
+  margin-bottom:10px;
+}
+.status--Like{
+  background-color: var(--primary-color);
+  width: fit-content;
+  padding: 5px 10px;
+  color: var(--secondText-color);
+  margin-bottom:10px;
+}
+.status--Comment{
+  background-color: var(--logout);
+  width: fit-content;
+  padding: 5px 10px;
+  color: var(--secondText-color);
+  margin-bottom:10px;
+}
+.status--Message{
+  background-color: var(--primary);
+  width: fit-content;
+  padding: 5px 10px;
+  color: var(--secondText-color);
+  margin-bottom:10px;
+}
+.nat-name{
+  color: var(--seconadry-color);
+  font-size: .8rem;
+  font-weight: 600;
+}
+.nat-message{
+  color: var(--seconadry-color);
+  font-size: .7rem;
+  font-weight: 400;
+  width: fit-content;
 }

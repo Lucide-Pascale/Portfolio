@@ -22,8 +22,6 @@ allLinks.forEach((elem) => {
   });
 });
 
-
-
 ctx = document.getElementById("chart");
 
 Chart.defaults.color = "#0d2030";
@@ -49,11 +47,14 @@ new Chart(ctx, {
     datasets: [
       {
         label: "Monthly Mybrand performance",
-        data: [2235, 3250, 1890, 5400, 20240, 6254,  12325, 4856, 10325, 2254, 22356, 8486],
+        data: [
+          2235, 3250, 1890, 5400, 20240, 6254, 12325, 4856, 10325, 2254, 22356,
+          8486,
+        ],
         backgroundColor: "white",
         borderColor: "#7a3fdf",
         borderRadius: 6,
-        cubicInterpolationMode: 'monotone',
+        cubicInterpolationMode: "monotone",
         fill: false,
         borderSkipped: false,
       },
@@ -62,12 +63,12 @@ new Chart(ctx, {
   options: {
     interaction: {
       intersect: false,
-      mode: 'index'
+      mode: "index",
     },
     elements: {
-      point:{
-          radius: 0
-      }
+      point: {
+        radius: 0,
+      },
     },
     responsive: true,
     maintainAspectRatio: false,
@@ -96,14 +97,14 @@ new Chart(ctx, {
         usePointStyle: true,
         color: "red",
         callbacks: {
-          label: function(context) {
-              if (context.parsed.y !== null) {
-                const label = new Intl.NumberFormat().format(context.parsed.y);
-                return label;
-              }
-              return null;
+          label: function (context) {
+            if (context.parsed.y !== null) {
+              const label = new Intl.NumberFormat().format(context.parsed.y);
+              return label;
+            }
+            return null;
           },
-        }
+        },
       },
     },
     scales: {
@@ -123,7 +124,7 @@ new Chart(ctx, {
         border: {
           dash: [4, 2],
         },
-    
+
         title: {
           display: true,
           text: "Vistors",
@@ -134,102 +135,115 @@ new Chart(ctx, {
   },
 });
 
-
-
 // users
 const teamMembers = [
   {
-    src: "assets/profile.jpg",
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "offline",
-  },  {
-    src: "assets/profile.jpg",
+  },
+  {
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "inactive",
-  },  {
-    src: "assets/profile.jpg",
+  },
+  {
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
-  },  {
-    src: "assets/profile.jpg",
+  },
+  {
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
-  },  {
-    src: "assets/profile.jpg",
+  },
+  {
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
-  },  {
-    src: "assets/profile.jpg",
+  },
+  {
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
-  },  {
-    src: "assets/profile.jpg",
+  },
+  {
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
-  },  {
-    src: "assets/profile.jpg",
+  },
+  {
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
-  },  {
-    src: "assets/profile.jpg",
+  },
+  {
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
-  },  {
-    src: "assets/profile.jpg",
+  },
+  {
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
-  },  {
-    src: "assets/profile.jpg",
+  },
+  {
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
-  },  {
-    src: "assets/profile.jpg",
+  },
+  {
+    src: "./assets/profile.jpg",
+    name: "Joseph Ishimwe",
+    alias: "@joseph",
+    email: "mugisha092@gmail.com",
+    status: "offline",
+  },
+  {
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
-  },  {
-    src: "assets/profile.jpg",
+  },
+  {
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
-  },  {
-    src: "assets/profile.jpg",
+  },
+  {
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
-  },  {
-    src: "assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "active",
-  },  {
-    src: "assets/profile.jpg",
+  },
+  {
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
@@ -270,3 +284,107 @@ const mappedRecords = teamMembers.map((users) => {
 });
 
 tableBody.innerHTML = mappedRecords.join("");
+
+//notification handlers
+const timeSince = (date) => {
+  const seconds = Math.floor((new Date() - date) / 1000);
+
+  let interval = seconds / 31536000;
+
+  if (interval > 1) {
+    return Math.floor(interval) + " years ago";
+  }
+  interval = seconds / 2592000;
+  if (interval > 1) {
+    return Math.floor(interval) + " months ago";
+  }
+  interval = seconds / 86400;
+  if (interval > 1) {
+    return Math.floor(interval) + " days ago";
+  }
+  interval = seconds / 3600;
+  if (interval > 1) {
+    return Math.floor(interval) + " hours ago";
+  }
+  interval = seconds / 60;
+  if (interval > 1) {
+    return Math.floor(interval) + " minutes ago";
+  }
+
+  if (seconds < 10) {
+    return "just now";
+  }
+
+  return Math.floor(seconds) + " seconds ago";
+};
+const notification = [
+  {
+    name: "Joseph MUGISHA",
+    message: "New user is created.",
+    status: "New_User",
+    createdAt: "2023-09-02 10:00:00",
+  },
+  {
+    name: "Joseph MUGISHA",
+    message: "New post is added. **post title**",
+    status: "Post",
+    createdAt: "2023-09-02 10:00:00",
+  },
+  {
+    name: "Joseph MUGISHA",
+    message: "Liked your post",
+    status: "Like",
+    createdAt: "2023-05-02 10:00:00",
+  },
+  {
+    name: "Joseph MUGISHA",
+    message: "commented on your post",
+    status: "Comment",
+    createdAt: "2023-03-02 10:00:00",
+  },
+  {
+    name: "Joseph MUGISHA",
+    message: "Message you **Message**",
+    status: "Message",
+    createdAt: "2023-05-02 10:00:00",
+  },
+  {
+    name: "Joseph MUGISHA",
+    message: "commented on your post",
+    status: "Comment",
+    createdAt: "2023-06-02 10:00:00",
+  },
+  {
+    name: "Joseph MUGISHA",
+    message: "Message you **Message**",
+    status: "Message",
+    createdAt: "2023-01-02 10:00:00",
+  },
+];
+let notificationCount = document.querySelector(".notification-count");
+notificationCount.innerHTML = `Notifications (${notification.length})`;
+
+// Update notification body
+let notificationBody = document.getElementById("notification-body");
+notificationBody.innerHTML = notification
+  .map((notification) => {
+    const newDate = new Date(notification.createdAt);
+    return `<tr>
+    <td class="notification-content">
+        <span class="status status--${notification.status}">
+          ${notification.status}
+        </span>
+          <span class="nat-name">
+            ${notification.name}
+          </span>
+      <span class="nat-message">${notification.message}</span>
+      <td>
+      <td style="width: 20%;">
+      <time datetime="${notification.createdAt}" class="comment__date">
+          ${timeSince(newDate)}
+      </time>
+  </td>
+      
+  </tr>`;
+  })
+  .join("");

@@ -27,33 +27,39 @@
       <div class="sidebar-links">
         <ul>
           <li>
-            <a href="#home" title="Home">
-              <i class='bx bx-home'></i>
-              <span class="link hide">Dashboard</span>
-            </a>
-          </li>
-          <li>
-            <a href="#orders">
-              <i class='bx bx-message-dots'></i>
-              <span class="link hide">Message</span>
-            </a>
-          </li>
-          <li>
-            <a href="#documentation" title="Documentation">
-              <i class='bx bxl-blogger'></i>
-              <span class="link hide">Blogs</span>
-            </a>
-          </li>
-          <li>
-            <a href="#map-overview" title="Map Overview">
+            <a href="#graph" title="Analystics">
               <i class='bx bxs-bar-chart-square'></i>
               <span class="link hide">Analistics</span>
             </a>
           </li>
           <li>
-            <a href="#analistic" title="Statistics">
+            <a href="#messages" title="Messages">
+              <i class='bx bx-message-dots'></i>
+              <span class="link hide">Message</span>
+            </a>
+          </li>
+          <li>
+            <a href="#blogs" title="Blogs">
+              <i class='bx bxl-blogger'></i>
+              <span class="link hide">Blogs</span>
+            </a>
+          </li>
+          <li>
+            <a href="#notifications" title="Notifications">
+              <i class='bx bxs-bell'></i>
+              <span class="link hide">Notification</span>
+            </a>
+          </li>
+          <li>
+            <a href="#users" title="Users">
               <i class='bx bx-group'></i>
               <span class="link hide">Users</span>
+            </a>
+          </li>
+          <li>
+            <a href="#comments" title="Comments">
+              <i class='bx bxs-comment' ></i>
+              <span class="link hide">Comments</span>
             </a>
           </li>
         </ul>
@@ -74,7 +80,7 @@
     </div>
   </nav>
   <main>
-    <section id="graph" class="graph" style="display: block;">
+    <section id="graph" class="graph" style="display: nonie;">
       <div class="widget">
         <canvas id="chart"></canvas>
       </div>
@@ -134,7 +140,7 @@
 
       </div>
     </section>
-    <!-- <section id="users" class="users">
+    <section id="users" class="users" style="display: nonie;">
       <div class="table-widget">
         <table>
           <caption >
@@ -152,11 +158,23 @@
             </tr>
           </thead>
           <tbody id="user" style="overflow-y: scroll;">
-            
+
           </tbody>
         </table>
       </div>
-    </section> -->
+    </section>
+    <section id="notifications" class="notification">
+      <div class="table-widget">
+        <table>
+          <caption>
+            <span class="notification-count"></span>
+          </caption>
+          <tbody id="notification-body" style="overflow-y: scroll;">
+            <!-- The notifications will be added here dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </section>
   </main>
 
   <script src="script.js"></script>
