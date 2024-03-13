@@ -33,19 +33,19 @@ const timeSince = (date) => {
 const users = {
   Joseph: {
     name: "MUGISHA Joseph",
-    src: "./assets/profile.jpg",
+    src: "../assets/profile.jpg",
   },
   Qasim: {
     name: "Qasim ITUZE",
-    src: "./assets/profile.jpg",
+    src: "../assets/profile.jpg",
   },
   Walmond: {
     name: "Walmond",
-    src: "./assets/profile.jpg",
+    src: "../assets/profile.jpg",
   },
   Fabrice: {
     name: "Fabrice MUKUNZI",
-    src: "./assets/profile.jpg",
+    src: "../assets/profile.jpg",
   },
 };
 
