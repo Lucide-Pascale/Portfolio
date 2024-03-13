@@ -246,8 +246,8 @@ function validateEmaill() {
 const signup_btn = document.getElementById("signup_btn");
 const login_btn = document.getElementById("login-btn");
 
-// signup_btn.addEventListener("click", signupFunc);
-// login_btn.addEventListener("click", loginFunc);
+signup_btn.addEventListener("click", signupFunc);
+login_btn.addEventListener("click", loginFunc);
 
 
 function signupFunc() {
@@ -285,27 +285,24 @@ function signupFunc() {
 
 
 
-// function loginFunc() {
-//   const login_email = document.getElementById("contact-emaill").value;
-//   const login_password = document.getElementById("password").value;
+function loginFunc() {
+  const login_email = document.getElementById("contact-emaill").value;
+  const login_password = document.getElementById("password").value;
 
-//   const users = JSON.parse(localStorage.getItem("Allusers")) || [];
+  const users = JSON.parse(localStorage.getItem("Allusers")) || [];
 
-//   const user = users.find(
-//     (u) => u.userEmail === login_email && u.userPassword === login_password
-//   );
+  const user = users.find(
+    (u) => u.userEmail === login_email && u.userPassword === login_password
+  );
 
-//   if (user) {
-//     // Generate a unique token (for simplicity, using a random number here)
-//     const token = Math.random().toString(36).substring(2);
+  if (user) {
+    const token = Math.random().toString(36).substring(2);
+    localStorage.setItem("userToken", token);
+    localStorage.setItem("currentUser", JSON.stringify(user));
 
-//     // Store the token and user information in local storage
-//     localStorage.setItem("userToken", token);
-//     localStorage.setItem("currentUser", JSON.stringify(user));
-
-//     alert("Login successful!");
-//     window.location.href = './Dashboard/index.html';
-//   } else {
-//     alert("Invalid credentials. Please try again.");
-//   }
-// }
+    alert("Login successful!");
+    window.location.href = './Dashboard/index.html';
+  } else {
+    alert("Invalid credentials. Please try again.");
+  }
+}
