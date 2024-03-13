@@ -81,9 +81,7 @@ const createComment = (comment) => {
   const newDate = new Date(comment.createdAt);
   return `<div class="comment">
         <div class="avatar">
-            <img class="avatar" src="${comment.author.src}" alt="${
-    comment.author.name
-  }">
+            <img class="avatar" src="${comment.author.src}" ">
         </div>
         <div class="comment__body">
             <div class="comment__author">
