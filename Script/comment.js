@@ -37,15 +37,15 @@ const users = {
   },
   Qasim: {
     name: "Qasim ITUZE",
-    src: "../Assets/profile.jpg",
+    src: "./Assets/profile.jpg",
   },
   Walmond: {
     name: "Walmond",
-    src: "../Assets/profile.jpg",
+    src: "./Assets/profile.jpg",
   },
   Fabrice: {
     name: "Fabrice MUKUNZI",
-    src: "../Assets/profile.jpg",
+    src: "./Assets/profile.jpg",
   },
 };
 
