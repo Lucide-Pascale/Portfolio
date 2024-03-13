@@ -266,7 +266,6 @@ function signupFunc() {
     alert("User with this email already exists. Please use a different email.");
     return;
   }
-
   let user = {
     username: signup_Full_name,
     usertel: signup_tell,
