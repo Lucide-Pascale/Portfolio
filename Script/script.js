@@ -277,7 +277,7 @@ function signupFunc() {
   users.push(user);
 
   localStorage.setItem("Allusers", JSON.stringify(users));
-  // alert("User successfully inserted!");
+  alert("User successfully inserted!");
   const Message="User successfully inserted!";
   showNotification(Message);
   
@@ -296,13 +296,21 @@ function loginFunc() {
   );
 
   if (user) {
-    const token = Math.random().toString(36).substring(2);
-    localStorage.setItem("userToken", token);
-    localStorage.setItem("currentUser", JSON.stringify(user));
-
-    alert("Login successful!");
-    window.location.href = './Dashboard/index.html';
+    setTimeout(()=>{
+      const token = Math.random().toString(36).substring(2);
+      localStorage.setItem("userToken", token);
+      localStorage.setItem("currentUser", JSON.stringify(user));
+  
+      alert("Login successful!");
+      window.location.href = './Dashboard/index.html';
+    },3000)
   } else {
     alert("Invalid credentials. Please try again.");
   }
 }
+
+
+let toastBox=document.getElementById("toastBox");
+let SuccessMsg=`<i class="fa-solid fa-circle-check"></i>successfully created`;
+let errorMsg=`<i class="fa-solid fa-circle-xmark"></i>Error`;
+let invalidMsg=`<i class="fa-solid fa-circle-info"></i>Invalid`;

@@ -820,7 +820,7 @@
                 <input type="password" name="" id="password"  onkeyup="passwordValidation()">
                 <p id="passwordError" style="font-size: .5rem; color: red;"></p>
               </div>
-              <button id="login-btn" >Sign in</button>
+              <button id="login-btn" onclick="showtoast(SuccessMsg)" >Sign in</button>
               <p><u>Forget password?</u></p>
               <p>Don’t you have an account ? <u onclick="hide()">Sign Up Now</u></p>
             </div>
@@ -872,7 +872,7 @@
       <div class="in">
         <input type="text" placeholder="Name">
         <input type="email" placeholder="Email">
-        <button onclick="showtoast(SuccessMsg)">Subscribe now</button>
+        <button>Subscribe now</button>
       </div>
     </div>
     <div class="footer-logo">
