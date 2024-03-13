@@ -259,7 +259,6 @@ function signupFunc() {
 
   let users = JSON.parse(localStorage.getItem("Allusers")) || [];
 
-  // Check if the user with the same email already exists
   const existingUser = users.find((u) => u.userEmail === signup_email);
 
   if (existingUser) {
@@ -277,7 +276,7 @@ function signupFunc() {
 
   localStorage.setItem("Allusers", JSON.stringify(users));
   alert("User successfully inserted!");
-  const Message="User successfully inserted!";
+  console.log("clicked");
   
 }
 
