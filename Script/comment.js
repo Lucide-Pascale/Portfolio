@@ -48,7 +48,7 @@ const users = {
     src: "./Assets/profile.jpg",
   },
 };
-
+//logged use
 const loggedUser = users["Joseph"];
 
 let comments = [
