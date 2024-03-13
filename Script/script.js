@@ -279,7 +279,6 @@ function signupFunc() {
   localStorage.setItem("Allusers", JSON.stringify(users));
   alert("User successfully inserted!");
   const Message="User successfully inserted!";
-  showNotification(Message);
   
 }
 
