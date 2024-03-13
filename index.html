@@ -13,6 +13,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./Styles/mobile.css">
   <link rel="shortcut icon" href="./Assets/logoM.png" type="image/x-icon">
+  <link rel="stylesheet" href="./Styles/notification.css">
 
 </head>
 
@@ -56,6 +57,8 @@
     </div>
   </nav>
   <main>
+    <div id="toastBox">
+    </div>
     <!--  Home Page  -->
     <section id="home" class="home">
       <div class="home-right">
@@ -622,7 +625,6 @@
           <div class="swiper-scrollbar"></div>
         </div>
       </div>
-      <button id="redirectButton">Click me to redirect</button>
     </section>
     <!--  Testimonials Page  -->
     <section id="Testimonials">
@@ -818,7 +820,7 @@
                 <input type="password" name="" id="password"  onkeyup="passwordValidation()">
                 <p id="passwordError" style="font-size: .5rem; color: red;"></p>
               </div>
-              <button>Sign in</button>
+              <button id="login-btn" >Sign in</button>
               <p><u>Forget password?</u></p>
               <p>Don’t you have an account ? <u onclick="hide()">Sign Up Now</u></p>
             </div>
@@ -841,22 +843,22 @@
             </div>
             <div class="bottomm">
               <div class="inputbx">
-                <label for="email">Full Name </label>
-                <input type="email" name="" id="email">
+                <label for="Full-name">Full Name </label>
+                <input type="text" name="" id="signup-Full-name">
               </div>
               <div class="inputbx">
-                <label for="email">Tel </label>
-                <input type="email" name="" id="email">
+                <label for="tel">Tel </label>
+                <input type="number" name="" id="signup-tel">
               </div>
               <div class="inputbx">
                 <label for="email">Email </label>
-                <input type="email" name="" id="email">
+                <input type="email" name="" id="signup-email">
               </div>
               <div class="inputbx">
-                <label for="password">Password </label>
-                <input type="password" name="" >
+                <label for="signup-password">Password </label>
+                <input type="password" name="" id="signup-password">
               </div>
-              <button>Sign up</button>
+              <button id="signup_btn" onclick="showNotification('okay')">Sign up</button>
               <p>Already a member? <u onclick="hide()">Login</u></p>
             </div>
           </div>
@@ -870,7 +872,7 @@
       <div class="in">
         <input type="text" placeholder="Name">
         <input type="email" placeholder="Email">
-        <button>Subscribe now</button>
+        <button onclick="showtoast(SuccessMsg)">Subscribe now</button>
       </div>
     </div>
     <div class="footer-logo">
@@ -905,9 +907,11 @@
     </div>
     <p id="copyright"></p>
   </footer>
-</body>
 <script src="./Script/swiper-bundle.min.js"></script>
 <script src="./Script/swipper.js"></script>
 <script src="./Script/script.js"></script>
+<script src="./Script/notification.js"></script>
+</body>
+
 
 </html>

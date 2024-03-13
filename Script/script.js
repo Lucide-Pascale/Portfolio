@@ -205,14 +205,12 @@ const passwordValidation = () => {
   }
 
   if (!/(?=.*[a-z])/.test(password)) {
-    passwordError.innerHTML =
-      `<i class='bx bxs-x-circle'>Password must contain at least one lowercase letter.`;
+    passwordError.innerHTML = `<i class='bx bxs-x-circle'>Password must contain at least one lowercase letter.`;
     return;
   }
 
   if (!/(?=.*[A-Z])/.test(password)) {
-    passwordError.innerHTML =
-      `<i class='bx bxs-x-circle'>Password must contain at least one uppercase letter.`;
+    passwordError.innerHTML = `<i class='bx bxs-x-circle'>Password must contain at least one uppercase letter.`;
     return;
   }
 
@@ -222,8 +220,7 @@ const passwordValidation = () => {
   }
 
   if (!/(?=.*[@.#$!%*?&])/.test(password)) {
-    passwordError.innerHTML =
-      `Password must contain at least one special character among @.#$!%*?&.`;
+    passwordError.innerHTML = `Password must contain at least one special character among @.#$!%*?&.`;
     return;
   }
 
@@ -245,3 +242,70 @@ function validateEmaill() {
     '<i class="fas fa-check-circle" style="color:green; ">';
   return true;
 }
+
+const signup_btn = document.getElementById("signup_btn");
+const login_btn = document.getElementById("login-btn");
+
+// signup_btn.addEventListener("click", signupFunc);
+// login_btn.addEventListener("click", loginFunc);
+
+
+function signupFunc() {
+  
+  const signup_email = document.getElementById("signup-email").value;
+  const signup_tell = document.getElementById("signup-tel").value;
+  const signup_Full_name = document.getElementById("signup-Full-name").value;
+  const signup_password = document.getElementById("signup-password").value;
+
+  let users = JSON.parse(localStorage.getItem("Allusers")) || [];
+
+  // Check if the user with the same email already exists
+  const existingUser = users.find((u) => u.userEmail === signup_email);
+
+  if (existingUser) {
+    alert("User with this email already exists. Please use a different email.");
+    return;
+  }
+
+  let user = {
+    username: signup_Full_name,
+    usertel: signup_tell,
+    userEmail: signup_email,
+    userPassword: signup_password,
+  };
+
+  users.push(user);
+
+  localStorage.setItem("Allusers", JSON.stringify(users));
+  // alert("User successfully inserted!");
+  const Message="User successfully inserted!";
+  showNotification(Message);
+  
+}
+
+
+
+// function loginFunc() {
+//   const login_email = document.getElementById("contact-emaill").value;
+//   const login_password = document.getElementById("password").value;
+
+//   const users = JSON.parse(localStorage.getItem("Allusers")) || [];
+
+//   const user = users.find(
+//     (u) => u.userEmail === login_email && u.userPassword === login_password
+//   );
+
+//   if (user) {
+//     // Generate a unique token (for simplicity, using a random number here)
+//     const token = Math.random().toString(36).substring(2);
+
+//     // Store the token and user information in local storage
+//     localStorage.setItem("userToken", token);
+//     localStorage.setItem("currentUser", JSON.stringify(user));
+
+//     alert("Login successful!");
+//     window.location.href = './Dashboard/index.html';
+//   } else {
+//     alert("Invalid credentials. Please try again.");
+//   }
+// }

@@ -388,3 +388,26 @@ notificationBody.innerHTML = notification
   </tr>`;
   })
   .join("");
+
+//Logout
+const logout = document.getElementById("logout");
+
+logout.addEventListener("click", logoutFunc);
+
+function logoutFunc() {
+  console.log("logged out");
+  const Message = "Logged out";
+  showNotification(Message);
+  console.log("logged out");
+  setTimeout(() => {
+    localStorage.removeItem("userToken");
+    localStorage.removeItem("currentUser");
+    window.location.href = "../index.html";
+  }, 2000);
+}
+var messageinput = document.getElementById("messageinput");
+function showNotification(message) {
+  var notification = document.querySelector(".notifications");
+  messageinput.innerHTML = message;
+  notification.style.display = "block";
+}
