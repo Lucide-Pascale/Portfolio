@@ -261,7 +261,7 @@ let tableBody = document.getElementById("user");
 const mappedRecords = teamMembers.map((users) => {
   return `<tr>
         <td class="user-profile">
-            <img src='${users.src}' alt="${users.name}">
+            <img src='https://i.postimg.cc/6pJTyyVn/profile.jpg' alt="${users.name}">
             <span class="profile-info">
                 <span class="profile-info__name">
                     ${users.name}
