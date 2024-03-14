@@ -138,14 +138,14 @@ new Chart(ctx, {
 // users
 const teamMembers = [
   {
-    src: "assets/profile.jpg",
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "offline",
   },
   {
-    src: "../assets/profile.jpg",
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
