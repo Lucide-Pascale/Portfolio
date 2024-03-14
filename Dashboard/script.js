@@ -215,35 +215,35 @@ const teamMembers = [
     status: "active",
   },
   {
-    src: "/assets/profile.jpg",
+    src: "./assets/profile.jpg",
     name: "Joseph Ishimwe",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "offline",
   },
   {
-    src: "/assets/profile.jpg",
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
   },
   {
-    src: "/assets/profile.jpg",
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
   },
   {
-    src: "/assets/profile.jpg",
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
     status: "active",
   },
   {
-    src: "/assets/profile.jpg",
+    src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
@@ -545,7 +545,7 @@ document.addEventListener("DOMContentLoaded", function() {
         message: "Has anyone seen my phone?"
     },
     {
-        src: "assets/profile.jpg",
+        src: "./assets/profile.jpg",
         name: "Olivia Taylor",
         alias: "@olivia",
         message: "Excited about the upcoming team outing!"
