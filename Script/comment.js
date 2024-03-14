@@ -73,7 +73,7 @@ let comments = [
 ];
 
 const authedUser = document.querySelector(".authed-user");
-authedUser.innerHTML = `<img class="avatar" src="./Assets/profile.jpg" alt="${loggedUser.name}">`;
+authedUser.innerHTML = `<img class="avatar" src="profile.jpg" alt="${loggedUser.name}">`;
 
 const commentsWrapper = document.querySelector(".discussion__comments");
 
