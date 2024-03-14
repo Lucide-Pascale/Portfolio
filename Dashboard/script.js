@@ -145,7 +145,7 @@ const teamMembers = [
     status: "offline",
   },
   {
-    src: "assets/profile.jpg",
+    src: "../assets/profile.jpg",
     name: "Joseph MUGISHA",
     alias: "@joseph",
     email: "mugisha092@gmail.com",
@@ -560,7 +560,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const mappedMessage = message.map((message) => {
       return `<tr>
           <td class="user-profile">
-              <img src="${message.src}" alt="${message.name}">
+              <img src='profile.jpg' alt="${message.name}">
               <span class="profile-info">
                   <span class="profile-info__name">${message.name}</span>
                   <span class="profile-info__alias">${message.alias}</span>
