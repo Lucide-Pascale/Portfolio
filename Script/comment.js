@@ -33,7 +33,7 @@ const timeSince = (date) => {
 const users = {
   Joseph: {
     name: "MUGISHA Joseph",
-    src: "../Assets/profile.jpg",
+    src: "/Assets/profile.jpg",
   },
   Qasim: {
     name: "Qasim ITUZE",
