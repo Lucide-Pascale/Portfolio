@@ -253,7 +253,7 @@ const Users = [
 
 // users
 let tableRowCount = document.getElementsByClassName("table-row-count");
-tableRowCount[0].innerHTML = `(${teamMembers.length}) Users`;
+tableRowCount[0].innerHTML = `(${Users.length}) Users`;
 console.log(tableRowCount);
 
 let tableBody = document.getElementById("user");
@@ -261,13 +261,13 @@ let tableBody = document.getElementById("user");
 const mappedRecords = teamMembers.map((Users) => {
   return `<tr>
         <td class="user-profile">
-        <img src='${users.src}' alt="${users.name}">
+        <img src='${Users.src}' alt="${Users.name}">
             <span class="profile-info">
                 <span class="profile-info__name">
-                    ${users.name}
+                    ${Users.name}
                 </span>
                 <span class=profile-info__alias>
-                    ${users.alias}
+                    ${Users.alias}
                 </span>
             </span>
         </td>
