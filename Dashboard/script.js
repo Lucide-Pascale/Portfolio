@@ -545,7 +545,7 @@ document.addEventListener("DOMContentLoaded", function() {
         message: "Has anyone seen my phone?"
     },
     {
-        src: "/assets/profile.jpg",
+        src: "assets/profile.jpg",
         name: "Olivia Taylor",
         alias: "@olivia",
         message: "Excited about the upcoming team outing!"
