@@ -73,7 +73,7 @@ let comments = [
 ];
 
 const authedUser = document.querySelector(".authed-user");
-authedUser.innerHTML = `<img class="avatar" src='profile.jpg' alt="${loggedUser.name}">`;
+authedUser.innerHTML = `<img class="avatar" src='https://i.postimg.cc/6pJTyyVn/profile.jpg' alt="${loggedUser.name}">`;
 
 const commentsWrapper = document.querySelector(".discussion__comments");
 
@@ -81,7 +81,7 @@ const createComment = (comment) => {
   const newDate = new Date(comment.createdAt);
   return `<div class="comment">
         <div class="avatar">
-            <img class="avatar" src='profile.jpg' alt="pic">
+            <img class="avatar" src='https://i.postimg.cc/6pJTyyVn/profile.jpg' alt="pic">
         </div>
         <div class="comment__body">
             <div class="comment__author">
