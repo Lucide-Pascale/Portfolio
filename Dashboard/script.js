@@ -411,3 +411,172 @@ function showNotification(message) {
   messageinput.innerHTML = message;
   notification.style.display = "block";
 }
+
+
+const modalDialog = document.querySelector(".copy-link-dialog");
+const shareBtn = document.querySelector(".share-btn");
+const closeBtn = document.querySelector(".close-btn");
+const copyBtn = document.querySelector(".copy-btn");
+
+shareBtn.addEventListener("click", () => {
+  modalDialog.classList.remove("copy-link-dialog--fadeout");
+  modalDialog.showModal();
+});
+
+closeBtn.addEventListener("click", () => {
+  modalDialog.classList.add("copy-link-dialog--fadeout");
+  modalDialog.close();
+});
+
+
+const dropzoneBox = document.getElementsByClassName("dropzone-box")[0];
+
+const inputFiles = document.querySelectorAll(
+  ".dropzone-area input[type='file']"
+);
+
+const inputElement = inputFiles[0];
+
+const dropZoneElement = inputElement.closest(".dropzone-area");
+
+inputElement.addEventListener("change", (e) => {
+  if (inputElement.files.length) {
+    updateDropzoneFileList(dropZoneElement, inputElement.files[0]);
+  }
+});
+
+dropZoneElement.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  dropZoneElement.classList.add("dropzone--over");
+});
+
+["dragleave", "dragend"].forEach((type) => {
+  dropZoneElement.addEventListener(type, (e) => {
+    dropZoneElement.classList.remove("dropzone--over");
+  });
+});
+
+dropZoneElement.addEventListener("drop", (e) => {
+  e.preventDefault();
+
+  if (e.dataTransfer.files.length) {
+    inputElement.files = e.dataTransfer.files;
+
+    updateDropzoneFileList(dropZoneElement, e.dataTransfer.files[0]);
+  }
+
+  dropZoneElement.classList.remove("dropzone--over");
+});
+
+const updateDropzoneFileList = (dropzoneElement, file) => {
+  let dropzoneFileMessage = dropzoneElement.querySelector(".message");
+
+  dropzoneFileMessage.innerHTML = `
+        ${file.name}, ${file.size} bytes
+    `;
+};
+
+dropzoneBox.addEventListener("reset", (e) => {
+  let dropzoneFileMessage = dropZoneElement.querySelector(".message");
+
+  dropzoneFileMessage.innerHTML = `No Files Selected`;
+});
+
+dropzoneBox.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const myFiled = document.getElementById("upload-file");
+  console.log(myFiled.files[0]);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  const message = [
+    {
+        src: "./assets/profile.jpg",
+        name: "Joseph MUGISHA",
+        alias: "@joseph",
+        message: "Hey, how's it going?"
+    },
+    {
+        src: "./assets/profile.jpg",
+        name: "Emily Smith",
+        alias: "@emily",
+        message: "I'm good, thanks! How about you?"
+    },
+    {
+        src: "./assets/profile.jpg",
+        name: "John Doe",
+        alias: "@john",
+        message: "Anyone up for a game of basketball?"
+    },
+    {
+        src: "./assets/profile.jpg",
+        name: "Alice Johnson",
+        alias: "@alice",
+        message: "Just finished my work, time for a coffee break!"
+    },
+    {
+        src: "./assets/profile.jpg",
+        name: "Michael Brown",
+        alias: "@michael",
+        message: "Happy birthday to our colleague, Sarah!"
+    },
+    {
+        src: "./assets/profile.jpg",
+        name: "Sophia Lee",
+        alias: "@sophia",
+        message: "Does anyone know where the meeting room is?"
+    },
+    {
+        src: "./assets/profile.jpg",
+        name: "David Wilson",
+        alias: "@david",
+        message: "Looking forward to the weekend!"
+    },
+    {
+        src: "./assets/profile.jpg",
+        name: "Emma Garcia",
+        alias: "@emma",
+        message: "Just submitted my project proposal, fingers crossed!"
+    },
+    {
+        src: "./assets/profile.jpg",
+        name: "Daniel Martinez",
+        alias: "@daniel",
+        message: "Has anyone seen my phone?"
+    },
+    {
+        src: "./assets/profile.jpg",
+        name: "Olivia Taylor",
+        alias: "@olivia",
+        message: "Excited about the upcoming team outing!"
+    }
+];
+
+  let tableRowCount = document.querySelector(".message-row-count");
+  tableRowCount.innerHTML = `(${message.length}) Messages`;
+
+  let messageBody = document.getElementById("messages");
+
+  const mappedMessage = message.map((message) => {
+      return `<tr>
+          <td class="user-profile">
+              <img src="${message.src}" alt="${message.name}">
+              <span class="profile-info">
+                  <span class="profile-info__name">${message.name}</span>
+                  <span class="profile-info__alias">${message.alias}</span>
+              </span>
+          </td>
+          <td>
+              <span class="status status--${message.status}">${message.message}</span>
+          </td>
+          <td><i class='bx bxs-trash' style="color: var(--logout);"></i></td> 
+      </tr>`;
+  });
+
+  messageBody.innerHTML = mappedMessage.join("");
+});
+
+
+
+
+
