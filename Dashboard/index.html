@@ -147,7 +147,7 @@
               <th>Name</th>
               <th>Status</th>
               <th>Email address</th>
-              <th>Password</th>
+              <th>User Role</th>
               <th>Delete</th>
               <th>Edit</th>
             </tr>
@@ -213,8 +213,8 @@
                   </header>
                   <div class="copy-link-dialog__content">
                     <div class="input-wrapper">
-                      <input type="text" name="" id="" placeholder="Enter blog title">
-                      <textarea name="" id="" cols="30" rows="5" placeholder="Enter blog description"></textarea>
+                      <input type="text" name="" id="blog_title" placeholder="Enter blog title">
+                      <textarea name="" id="blog_content" cols="30" rows="5" placeholder="Enter blog description"></textarea>
                     </div>
                   </div>
                   <p>
@@ -225,7 +225,7 @@
 
                     </div>
                     <p>Click to upload or drag and drop</p>
-                    <input type="file" required id="upload-file" name="uploaded-file">
+                    <input type="file" required id="upload-file" name="image">
                     <p class="message">No Files Selected</p>
                   </div>
                   <div class="dropzone-actions">
@@ -278,6 +278,9 @@
     </div>
     <div class="notification__progress"></div>
   </figure>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+    integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="script.js"></script>
 </body>
 

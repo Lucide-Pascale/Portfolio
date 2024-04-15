@@ -136,7 +136,8 @@ new Chart(ctx, {
 });
 
 // users
-const teamMembers = [
+
+const teamMemberss = [
   {
     src: "./assets/profile.jpg",
     name: "Joseph MUGISHA",
@@ -252,38 +253,71 @@ const teamMembers = [
 ];
 
 // users
-let tableRowCount = document.getElementsByClassName("table-row-count");
-tableRowCount[0].innerHTML = `(${teamMembers.length}) Users`;
-console.log(tableRowCount);
+const deleteUser = async (userId, authToken) => {
+  try {
+    const res = await axios({
+      method: "DELETE",
+      url: `http://localhost:8081/api/users/${userId}`,
+      headers: { Authorization: `Bearer ${authToken}` },
+    });
+    console.log(res.data);
+    console.log(userId);
+    // You might want to refresh the UI after deletion, such as fetching the updated user list
+  } catch (error) {
+    console.error("Error deleting user:", error);
+  }
+};
 
-let tableBody = document.getElementById("user");
+document.addEventListener("DOMContentLoaded", async () => {
+  const authToken = localStorage.getItem("jwt");
+  try {
+    const teamMember = await axios({
+      method: "GET",
+      url: "http://localhost:8081/api/users",
+      headers: { Authorization: `Bearer ${authToken}` },
+    });
+    let userCount = document.querySelector(".table-row-count");
+    userCount.innerHTML = `(${teamMember.data.results}) User`;
+    const teamMembers = teamMember.data.data.User;
+    console.log(teamMembers);
 
-const mappedRecords = teamMembers.map((users) => {
-  return `<tr>
+    const tableBody = document.getElementById("user");
+    const userStatus = "active";
+    const mappedRecords = teamMembers.map((user) => {
+      return `<tr>
         <td class="user-profile">
-            <img src='https://i.postimg.cc/6pJTyyVn/profile.jpg' alt="${users.name}">
+            <img src='https://i.postimg.cc/6pJTyyVn/profile.jpg' alt="${user.name}">
             <span class="profile-info">
                 <span class="profile-info__name">
-                    ${users.name}
-                </span>
-                <span class=profile-info__alias>
-                    ${users.alias}
+                    ${user.name}
                 </span>
             </span>
         </td>
         <td>
-            <span class="status status--${users.status}">
-                ${users.status}
+            <span class="status status--${userStatus}">
+                ${userStatus}
             </span>
         </td>
-        <td>${users.email}</td>
-        <td>************</i></td>
-        <td><i class='bx bxs-trash'></i></td>
+        <td>${user.email}</td>
+        <td>************</td>
+        <td><i class='bx bxs-trash delete-icon' data-userid="${user._id}"></i></td>
         <td><i class='bx bxs-edit'></i></td>
     </tr>`;
-});
+    });
 
-tableBody.innerHTML = mappedRecords.join("");
+    tableBody.innerHTML = mappedRecords.join("");
+    const deleteIcons = document.querySelectorAll(".delete-icon");
+    deleteIcons.forEach((icon) => {
+      icon.addEventListener("click", (event) => {
+        const userId = event.target.dataset.userid;
+        console.log(userId); // Get user ID from data attribute
+        deleteUser(userId, authToken); // Pass user ID to deleteUser function
+      });
+    });
+  } catch (error) {
+    console.error("Error fetching or rendering users:", error);
+  }
+});
 
 //notification handlers
 const timeSince = (date) => {
@@ -400,8 +434,7 @@ function logoutFunc() {
   showNotification(Message);
   console.log("logged out");
   setTimeout(() => {
-    localStorage.removeItem("userToken");
-    localStorage.removeItem("currentUser");
+    localStorage.removeItem("jwt");
     window.location.href = "../index.html";
   }, 2000);
 }
@@ -411,7 +444,6 @@ function showNotification(message) {
   messageinput.innerHTML = message;
   notification.style.display = "block";
 }
-
 
 const modalDialog = document.querySelector(".copy-link-dialog");
 const shareBtn = document.querySelector(".share-btn");
@@ -427,7 +459,6 @@ closeBtn.addEventListener("click", () => {
   modalDialog.classList.add("copy-link-dialog--fadeout");
   modalDialog.close();
 });
-
 
 const dropzoneBox = document.getElementsByClassName("dropzone-box")[0];
 
@@ -488,95 +519,174 @@ dropzoneBox.addEventListener("submit", (e) => {
   console.log(myFiled.files[0]);
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  const message = [
-    {
+const deleteMessage = async (messageId, authToken) => {
+  try {
+    const res = await axios({
+      method: "DELETE",
+      url: `http://localhost:8081/api/messages/${messageId}`,
+      headers: { Authorization: `Bearer ${authToken}` },
+    });
+    console.log(res.data);
+    console.log(messageId);
+  } catch (error) {
+    console.error("Error deleting message:", error);
+  }
+};
+
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const messagess = [
+      {
         src: "./assets/profile.jpg",
         name: "Joseph MUGISHA",
         alias: "@joseph",
-        message: "Hey, how's it going?"
-    },
-    {
+        message: "Hey, how's it going?",
+      },
+      {
         src: "./assets/profile.jpg",
         name: "Emily Smith",
         alias: "@emily",
-        message: "I'm good, thanks! How about you?"
-    },
-    {
+        message: "I'm good, thanks! How about you?",
+      },
+      {
         src: "./assets/profile.jpg",
         name: "John Doe",
         alias: "@john",
-        message: "Anyone up for a game of basketball?"
-    },
-    {
+        message: "Anyone up for a game of basketball?",
+      },
+      {
         src: "./assets/profile.jpg",
         name: "Alice Johnson",
         alias: "@alice",
-        message: "Just finished my work, time for a coffee break!"
-    },
-    {
+        message: "Just finished my work, time for a coffee break!",
+      },
+      {
         src: "./assets/profile.jpg",
         name: "Michael Brown",
         alias: "@michael",
-        message: "Happy birthday to our colleague, Sarah!"
-    },
-    {
+        message: "Happy birthday to our colleague, Sarah!",
+      },
+      {
         src: "./assets/profile.jpg",
         name: "Sophia Lee",
         alias: "@sophia",
-        message: "Does anyone know where the meeting room is?"
-    },
-    {
+        message: "Does anyone know where the meeting room is?",
+      },
+      {
         src: "./assets/profile.jpg",
         name: "David Wilson",
         alias: "@david",
-        message: "Looking forward to the weekend!"
-    },
-    {
+        message: "Looking forward to the weekend!",
+      },
+      {
         src: "./assets/profile.jpg",
         name: "Emma Garcia",
         alias: "@emma",
-        message: "Just submitted my project proposal, fingers crossed!"
-    },
-    {
+        message: "Just submitted my project proposal, fingers crossed!",
+      },
+      {
         src: "./assets/profile.jpg",
         name: "Daniel Martinez",
         alias: "@daniel",
-        message: "Has anyone seen my phone?"
-    },
-    {
+        message: "Has anyone seen my phone?",
+      },
+      {
         src: "./assets/profile.jpg",
         name: "Olivia Taylor",
         alias: "@olivia",
-        message: "Excited about the upcoming team outing!"
-    }
-];
+        message: "Excited about the upcoming team outing!",
+      },
+    ];
+    const authtoken = localStorage.getItem("jwt");
 
-  let tableRowCount = document.querySelector(".message-row-count");
-  tableRowCount.innerHTML = `(${message.length}) Messages`;
+    const messages = await axios({
+      method: "GET",
+      url: "http://localhost:8081/api/messages",
+      headers: { Authorization: `Bearer ${authtoken}` },
+    });
+    let message = messages.data.data.messages;
+    console.log(message);
 
-  let messageBody = document.getElementById("messages");
+    let tableRowCount = document.querySelector(".message-row-count");
+    tableRowCount.innerHTML = `(${message.length}) Messages`;
 
-  const mappedMessage = message.map((message) => {
+    let messageBody = document.getElementById("messages");
+
+    const mappedMessage = message.map((message) => {
       return `<tr>
           <td class="user-profile">
-              <img src='https://i.postimg.cc/6pJTyyVn/profile.jpg' alt="${message.name}">
+              <img src='https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg' alt="${message.name}">
               <span class="profile-info">
-                  <span class="profile-info__name">${message.name}</span>
-                  <span class="profile-info__alias">${message.alias}</span>
+                  <span class="profile-info__name">${message.firstname} ${message.lastname}</span>
+                  <span class="profile-info__alias">${message.lastname}</span>
               </span>
           </td>
           <td>
               <span class="status status--${message.status}">${message.message}</span>
           </td>
-          <td><i class='bx bxs-trash' style="color: var(--logout);"></i></td> 
+          <td><i class='bx bxs-trash deletee-icon' data-messageid="${message._id}" style="color: var(--logout);"></i></td> 
       </tr>`;
-  });
+    });
 
-  messageBody.innerHTML = mappedMessage.join("");
+    messageBody.innerHTML = mappedMessage.join("");
+    const deleteIcons = document.querySelectorAll(".deletee-icon");
+    deleteIcons.forEach((icon) => {
+      icon.addEventListener("click", (event) => {
+        const userId = event.target.dataset.messageid;
+        console.log(userId); // Get user ID from data attribute
+        deleteMessage(userId, authtoken); // Pass user ID to deleteUser function
+        alert('Message deleted')
+        window.location.reload();
+      });
+    });
+  } catch (e) {
+    console.log(e);
+  }
 });
 
 
 
+// Attach event listener to the "Save" button
+document.getElementById("submit-button").addEventListener("click", function(event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+  
+  // Retrieve form data
+  const title = document.getElementById("blog_title").value;
+  const content = document.getElementById("blog_content").value;
+  const image = document.getElementById("upload-file").files[0];
+  console.log(title,content,image);
+
+  if (!title || !image) {
+    alert("Please enter a title and upload a cover image.");
+    return;
+  }
+
+ 
+  posting_Blog_func(title, content, image);
+});
 
 
+const posting_Blog_func = async (title, content, cover) => {
+  try {
+    const authtoken = localStorage.getItem("jwt");
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('content', content);
+    formData.append('image', cover);
+
+    const res = await axios({
+      method: "POST",
+      url: "http://localhost:8081/api/blog",
+      data: formData,
+      headers: { 
+        Authorization: `Bearer ${authtoken}`,
+        'Content-Type': 'multipart/form-data'
+      },
+    });
+    console.log(res.data.data.Blog);
+    alert(res.data.data.Blog);
+  } catch (e) {
+    console.log(e.response);
+    alert(e)
+  }
+};

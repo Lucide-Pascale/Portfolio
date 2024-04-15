@@ -33,7 +33,7 @@
           <li onclick="clicked_links(this)" class="mobile-links"><a href="#Services">Services</a></li>
           <li onclick="clicked_links(this)" class="mobile-links"><a href="#Blogs">Blogs</a></li>
           <li onclick="clicked_links(this)" class="mobile-links"><a href="#Contact">Contact</a></li>
-          <li onclick="clicked_links(this)" class="mobile-links"><a href="#sigin">Login</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links" id="login_nav_mobile"><a href="#sigin">Login</a></li>
           <li class="active">
             <a href="#"><i class="bx bxs-moon"></i></a>
           </li>
@@ -46,7 +46,7 @@
           <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Services">Services</a></li>
           <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Blogs">Blogs</a></li>
           <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Contact">Contact</a></li>
-          <li onclick="clicked_links(this)" class="hideOnMobile"><a href="#sigin">Login</a></li>
+          <li onclick="clicked_links(this)" class="hideOnMobile" id="login_nav"><a href="#sigin">Login</a></li>
           <li class="hideOnMobile active">
             <i class="bx bxs-moon" id="darkModeToggle"></i></a>
           </li>
@@ -425,202 +425,9 @@
       <h3 class="title"><span>My </span>Blogs</h3>
       <div class="all-blog">
         <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="blog">
-                <div class="cover"></div>
-                <div class="blog-content">
-                  <div class="date">Mon Jan 16 2023</div>
-                  <div class="desc">
-                    <p><a href="./singleBlog.html">The Best Apple MacBook Air AndMacBook Pro Laptops For 2023,58% OFF</a></p>
-                  </div>
-                  <div class="like-comment">
-                    <div class="item">
-                      <i class='bx bx-heart'></i>
-                      <p>12k</p>
-                    </div>
-                    <div class="item">
-                      <i class='bx bxs-comment-dots'></i>
-                      <p>23k</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="blog">
-                <div class="cover"></div>
-                <div class="blog-content">
-                  <div class="date">Mon Jan 16 2023</div>
-                  <div class="desc">
-                    <p>The Best Apple MacBook Air AndMacBook Pro Laptops For 2023,58% OFF</p>
-                  </div>
-                  <div class="like-comment">
-                    <div class="item">
-                      <i class='bx bx-heart'></i>
-                      <p>12k</p>
-                    </div>
-                    <div class="item">
-                      <i class='bx bxs-comment-dots'></i>
-                      <p>23k</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="blog">
-                <div class="cover"></div>
-                <div class="blog-content">
-                  <div class="date">Mon Jan 16 2023</div>
-                  <div class="desc">
-                    <p>The Best Apple MacBook Air AndMacBook Pro Laptops For 2023,58% OFF</p>
-                  </div>
-                  <div class="like-comment">
-                    <div class="item">
-                      <i class='bx bx-heart'></i>
-                      <p>12k</p>
-                    </div>
-                    <div class="item">
-                      <i class='bx bxs-comment-dots'></i>
-                      <p>23k</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="blog">
-                <div class="cover"></div>
-                <div class="blog-content">
-                  <div class="date">Mon Jan 16 2023</div>
-                  <div class="desc">
-                    <p>The Best Apple MacBook Air AndMacBook Pro Laptops For 2023,58% OFF</p>
-                  </div>
-                  <div class="like-comment">
-                    <div class="item">
-                      <i class='bx bx-heart'></i>
-                      <p>12k</p>
-                    </div>
-                    <div class="item">
-                      <i class='bx bxs-comment-dots'></i>
-                      <p>23k</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="blog">
-                <div class="cover"></div>
-                <div class="blog-content">
-                  <div class="date">Mon Jan 16 2023</div>
-                  <div class="desc">
-                    <p>The Best Apple MacBook Air AndMacBook Pro Laptops For 2023,58% OFF</p>
-                  </div>
-                  <div class="like-comment">
-                    <div class="item">
-                      <i class='bx bx-heart'></i>
-                      <p>12k</p>
-                    </div>
-                    <div class="item">
-                      <i class='bx bxs-comment-dots'></i>
-                      <p>23k</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="blog">
-                <div class="cover"></div>
-                <div class="blog-content">
-                  <div class="date">Mon Jan 16 2023</div>
-                  <div class="desc">
-                    <p>The Best Apple MacBook Air AndMacBook Pro Laptops For 2023,58% OFF</p>
-                  </div>
-                  <div class="like-comment">
-                    <div class="item">
-                      <i class='bx bx-heart'></i>
-                      <p>12k</p>
-                    </div>
-                    <div class="item">
-                      <i class='bx bxs-comment-dots'></i>
-                      <p>23k</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="blog">
-                <div class="cover"></div>
-                <div class="blog-content">
-                  <div class="date">Mon Jan 16 2023</div>
-                  <div class="desc">
-                    <p>The Best Apple MacBook Air AndMacBook Pro Laptops For 2023,58% OFF</p>
-                  </div>
-                  <div class="like-comment">
-                    <div class="item">
-                      <i class='bx bx-heart'></i>
-                      <p>12k</p>
-                    </div>
-                    <div class="item">
-                      <i class='bx bxs-comment-dots'></i>
-                      <p>23k</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="blog">
-                <div class="cover"></div>
-                <div class="blog-content">
-                  <div class="date">Mon Jan 16 2023</div>
-                  <div class="desc">
-                    <p><a href="./singleBlog.html" id="redirectButton">The Best Apple MacBook Air AndMacBook Pro Laptops
-                        For 2023,58% OFF</a></p>
-                  </div>
-                  <div class="like-comment">
-                    <div class="item">
-                      <i class='bx bx-heart'></i>
-                      <p>12k</p>
-                    </div>
-                    <div class="item">
-                      <i class='bx bxs-comment-dots'></i>
-                      <p>23k</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="blog">
-                <div class="cover"></div>
-                <div class="blog-content">
-                  <div class="date">Mon Jan 16 2023</div>
-                  <div class="desc">
-                    <p>The Best Apple MacBook Air AndMacBook Pro Laptops For 2023,58% OFF</p>
-                  </div>
-                  <div class="like-comment">
-                    <div class="item">
-                      <i class='bx bx-heart'></i>
-                      <p>12k</p>
-                    </div>
-                    <div class="item">
-                      <i class='bx bxs-comment-dots'></i>
-                      <p>23k</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="swiper-wrapper" id="blogContainer">
           </div>
-          <!-- <div class="swiper-button-next"></div> -->
           <div class="icon"><i class='bx bxs-chevron-right-square swiper-button-next'></i></div>
-          <!-- <i class='bx bxs-chevron-left-square swiper-button-next'></i> -->
-          <!-- <div class="swiper-button-prev"></div> -->
           <div class="icon"><i class='bx bxs-chevron-left-square swiper-button-prev'></i></div>
           <div class="swiper-scrollbar"></div>
         </div>
@@ -767,11 +574,14 @@
                 </div>
               </div>
               <div class="inputbox">
-                <textarea class="in" name="message" onkeyup="validateMessage()" id="contact-message" cols="30" rows="10"></textarea>
+                <textarea class="in" name="message" onkeyup="validateMessage()" id="contact-message" cols="30"
+                  rows="10"></textarea>
                 <p id="message-error"
                   style="position: absolute; z-index: 100; bottom: 2px; right: 10px; background-color: #fff; font-size: .7rem; color: red;">
                 </p>
-                <span><p>Message</p></span>
+                <span>
+                  <p>Message</p>
+                </span>
               </div>
               <button class="btn in" id="btn">
                 <p>Contact Me</p><i class='bx bx-send'></i>
@@ -812,15 +622,15 @@
             <div class="bottomm">
               <div class="inputbx">
                 <label for="email">Email </label>
-                <input type="email" name="" id="contact-emaill" onkeyup="validateEmaill()">
+                <input type="email" name="" id="contact-emaill" class="login-email" onkeyup="validateEmaill()">
                 <p id="emailError" style="font-size: .5rem; color: red;"></p>
               </div>
               <div class="inputbx">
                 <label for="password">Password </label>
-                <input type="password" name="" id="password"  onkeyup="passwordValidation()">
+                <input type="password" name="" id="password" class="login-password" onkeyup="passwordValidation()">
                 <p id="passwordError" style="font-size: .5rem; color: red;"></p>
               </div>
-              <button id="login-btn" onclick="showtoast(SuccessMsg)" >Sign in</button>
+              <button id="login-btn">Sign in</button>
               <p><u>Forget password?</u></p>
               <p>Don’t you have an account ? <u onclick="hide()">Sign Up Now</u></p>
             </div>
@@ -847,16 +657,16 @@
                 <input type="text" name="" id="signup-Full-name">
               </div>
               <div class="inputbx">
-                <label for="tel">Tel </label>
-                <input type="number" name="" id="signup-tel">
-              </div>
-              <div class="inputbx">
                 <label for="email">Email </label>
                 <input type="email" name="" id="signup-email">
               </div>
               <div class="inputbx">
                 <label for="signup-password">Password </label>
                 <input type="password" name="" id="signup-password">
+              </div>
+              <div class="inputbx">
+                <label for="signup-password">Confirm Password </label>
+                <input type="password" name="" id="signup-confirmPassword">
               </div>
               <button id="signup_btn">Sign up</button>
               <p>Already a member? <u onclick="hide()">Login</u></p>
@@ -907,10 +717,14 @@
     </div>
     <p id="copyright"></p>
   </footer>
-<script src="./Script/swiper-bundle.min.js"></script>
-<script src="./Script/swipper.js"></script>
-<script src="./Script/script.js"></script>
-<script src="./Script/notification.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+    integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./Script/swiper-bundle.min.js"></script>
+  <script src="./Script/swipper.js"></script>
+  <script src="./Script/script.js"></script>
+  <script src="./Script/notification.js"></script>
+  <script src="./Script/login.js"></script>
 </body>
 
 

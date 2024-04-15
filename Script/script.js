@@ -59,14 +59,6 @@ function updateCopyright() {
 }
 window.onload = updateCopyright;
 
-document
-  .getElementById("downloadButton")
-  .addEventListener("click", function () {
-    var downloadLink = document.createElement("a");
-    downloadLink.setAttribute("href", "assets/resume.pdf");
-    downloadLink.setAttribute("download", "resume.pdf");
-    downloadLink.click();
-  });
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
@@ -84,9 +76,8 @@ var phoneError = document.getElementById("phone-error");
 var emailError = document.getElementById("email-error");
 var messageError = document.getElementById("message-error");
 var submitError = document.getElementById("submit-error");
-submitError.disabled = true;
 function validateName() {
-  var name = document.getElementById("contact-name").value;
+  let name = document.getElementById("contact-name").value;
 
   if (name.length == 0) {
     nameError.innerHTML = `<i class='bx bxs-x-circle'></i>Name is required`;
@@ -116,7 +107,7 @@ function validatelName() {
   return true;
 }
 
-var name = document.getElementById("contact-name").value;
+let name = document.getElementById("contact-name").value;
 if (nameError.length === 0) {
   submitError.disabled = true;
 } else {
@@ -245,66 +236,6 @@ function validateEmaill() {
 
 const signup_btn = document.getElementById("signup_btn");
 const login_btn = document.getElementById("login-btn");
-
-signup_btn.addEventListener("click", signupFunc);
-login_btn.addEventListener("click", loginFunc);
-
-
-function signupFunc() {
-  
-  const signup_email = document.getElementById("signup-email").value;
-  const signup_tell = document.getElementById("signup-tel").value;
-  const signup_Full_name = document.getElementById("signup-Full-name").value;
-  const signup_password = document.getElementById("signup-password").value;
-
-  let users = JSON.parse(localStorage.getItem("Allusers")) || [];
-
-  const existingUser = users.find((u) => u.userEmail === signup_email);
-
-  if (existingUser) {
-    alert("User with this email already exists. Please use a different email.");
-    return;
-  }
-  let user = {
-    username: signup_Full_name,
-    usertel: signup_tell,
-    userEmail: signup_email,
-    userPassword: signup_password,
-  };
-
-  users.push(user);
-
-  localStorage.setItem("Allusers", JSON.stringify(users));
-  alert("User successfully inserted!");
-  console.log("clicked");
-  
-}
-
-
-
-function loginFunc() {
-  const login_email = document.getElementById("contact-emaill").value;
-  const login_password = document.getElementById("password").value;
-
-  const users = JSON.parse(localStorage.getItem("Allusers")) || [];
-
-  const user = users.find(
-    (u) => u.userEmail === login_email && u.userPassword === login_password
-  );
-
-  if (user) {
-    setTimeout(()=>{
-      const token = Math.random().toString(36).substring(2);
-      localStorage.setItem("userToken", token);
-      localStorage.setItem("currentUser", JSON.stringify(user));
-  
-      alert("Login successful!");
-      window.location.href = './Dashboard/index.html';
-    },3000)
-  } else {
-    alert("Invalid credentials. Please try again.");
-  }
-}
 
 
 let toastBox=document.getElementById("toastBox");
