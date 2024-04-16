@@ -262,6 +262,7 @@ const deleteUser = async (userId, authToken) => {
     });
     console.log(res.data);
     console.log(userId);
+    window.location.reload();
     // You might want to refresh the UI after deletion, such as fetching the updated user list
   } catch (error) {
     console.error("Error deleting user:", error);
@@ -299,7 +300,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             </span>
         </td>
         <td>${user.email}</td>
-        <td>************</td>
+        <td>${user.role}</td>
         <td><i class='bx bxs-trash delete-icon' data-userid="${user._id}"></i></td>
         <td><i class='bx bxs-edit'></i></td>
     </tr>`;
@@ -535,68 +536,6 @@ const deleteMessage = async (messageId, authToken) => {
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const messagess = [
-      {
-        src: "./assets/profile.jpg",
-        name: "Joseph MUGISHA",
-        alias: "@joseph",
-        message: "Hey, how's it going?",
-      },
-      {
-        src: "./assets/profile.jpg",
-        name: "Emily Smith",
-        alias: "@emily",
-        message: "I'm good, thanks! How about you?",
-      },
-      {
-        src: "./assets/profile.jpg",
-        name: "John Doe",
-        alias: "@john",
-        message: "Anyone up for a game of basketball?",
-      },
-      {
-        src: "./assets/profile.jpg",
-        name: "Alice Johnson",
-        alias: "@alice",
-        message: "Just finished my work, time for a coffee break!",
-      },
-      {
-        src: "./assets/profile.jpg",
-        name: "Michael Brown",
-        alias: "@michael",
-        message: "Happy birthday to our colleague, Sarah!",
-      },
-      {
-        src: "./assets/profile.jpg",
-        name: "Sophia Lee",
-        alias: "@sophia",
-        message: "Does anyone know where the meeting room is?",
-      },
-      {
-        src: "./assets/profile.jpg",
-        name: "David Wilson",
-        alias: "@david",
-        message: "Looking forward to the weekend!",
-      },
-      {
-        src: "./assets/profile.jpg",
-        name: "Emma Garcia",
-        alias: "@emma",
-        message: "Just submitted my project proposal, fingers crossed!",
-      },
-      {
-        src: "./assets/profile.jpg",
-        name: "Daniel Martinez",
-        alias: "@daniel",
-        message: "Has anyone seen my phone?",
-      },
-      {
-        src: "./assets/profile.jpg",
-        name: "Olivia Taylor",
-        alias: "@olivia",
-        message: "Excited about the upcoming team outing!",
-      },
-    ];
     const authtoken = localStorage.getItem("jwt");
 
     const messages = await axios({
@@ -635,7 +574,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const userId = event.target.dataset.messageid;
         console.log(userId); // Get user ID from data attribute
         deleteMessage(userId, authtoken); // Pass user ID to deleteUser function
-        alert('Message deleted')
+        alert("Message deleted");
         window.location.reload();
       });
     });
@@ -644,49 +583,138 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-
-
 // Attach event listener to the "Save" button
-document.getElementById("submit-button").addEventListener("click", function(event) {
-  event.preventDefault(); // Prevent the default form submission behavior
-  
-  // Retrieve form data
-  const title = document.getElementById("blog_title").value;
-  const content = document.getElementById("blog_content").value;
-  const image = document.getElementById("upload-file").files[0];
-  console.log(title,content,image);
+document
+  .getElementById("submit-button")
+  .addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior
 
-  if (!title || !image) {
-    alert("Please enter a title and upload a cover image.");
-    return;
-  }
+    // Retrieve form data
+    const title = document.getElementById("blog_title").value;
+    const content = document.getElementById("blog_content").value;
+    const image = document.getElementById("upload-file").files[0];
+    console.log(title, content, image);
 
- 
-  posting_Blog_func(title, content, image);
-});
+    if (!title || !image) {
+      alert("Please enter a title and upload a cover image.");
+      return;
+    }
 
+    posting_Blog_func(title, content, image);
+  });
 
 const posting_Blog_func = async (title, content, cover) => {
   try {
     const authtoken = localStorage.getItem("jwt");
     const formData = new FormData();
-    formData.append('title', title);
-    formData.append('content', content);
-    formData.append('image', cover);
+    formData.append("title", title);
+    formData.append("content", content);
+    formData.append("image", cover);
 
     const res = await axios({
       method: "POST",
       url: "http://localhost:8081/api/blog",
       data: formData,
-      headers: { 
+      headers: {
         Authorization: `Bearer ${authtoken}`,
-        'Content-Type': 'multipart/form-data'
+        "Content-Type": "multipart/form-data",
       },
     });
     console.log(res.data.data.Blog);
-    alert(res.data.data.Blog);
+    alert("Blog created successfully");
+    window.location.reload();
   } catch (e) {
     console.log(e.response);
-    alert(e)
+    alert(e);
   }
 };
+
+let blogs = [];
+const deleteBlog = async (blogId, authToken) => {
+  try {
+    const res = await axios({
+      method: "DELETE",
+      url: `http://localhost:8081/api/blog/${blogId}`,
+      headers: { Authorization: `Bearer ${authToken}` },
+    });
+    alert("Blog deleted successfully");
+    window.location.reload();
+    console.log(res.data);
+    console.log(messageId);
+  } catch (error) {
+    console.error("Error deleting blog:", error);
+  }
+};
+function saveBlog(event) {
+  event.preventDefault();
+
+  // Get form data
+  const formData = new FormData(event.target);
+  const title = formData.get("title");
+  const content = formData.get("content");
+  const image = formData.get("image");
+  const blog = {
+    title,
+    content,
+    image,
+  };
+
+  displayBlog(blog);
+}
+
+// Function to display a blog
+function displayBlog(blog) {
+  const articlesDiv = document.querySelector(".articles");
+
+  const article = document.createElement("article");
+  article.innerHTML = `
+    <figure>
+      <img src="${blog.cover}" alt="Preview">
+    </figure>
+    <div class="article-preview">
+      <h2>${blog.title}</h2>
+      <div class="icons"><i class='bx bxs-trash' onclick="deleteBlog('${
+        blog._id
+      }', '${localStorage.getItem(
+    "jwt"
+  )}')"></i><i class='bx bx-edit' onclick="updateDirect('${blog._id}')"></i></div>
+    </div>
+  `;
+
+  articlesDiv.appendChild(article);
+}
+
+const fetchBlogPosts = async () => {
+  try {
+    const response = await axios({
+      url: `http://localhost:8081/api/blog`,
+      method: "GET",
+    });
+    const sampleBlogs = response.data.data.Blogs;
+    console.log(sampleBlogs);
+    sampleBlogs.forEach((blog) => {
+      blogs.push(blog);
+      displayBlog(blog);
+    });
+  } catch (error) {
+    console.log("hello");
+    console.error("Error fetching blog posts:", error);
+    throw error;
+  }
+};
+
+fetchBlogPosts();
+
+const updateDirect = (blogId) => {
+  window.location.href = "update.html?blog_id=" + blogId+"#blogs";
+};
+
+
+
+const currentUserString = localStorage.getItem("user");
+const currentUser = JSON.parse(currentUserString);
+const user_name=document.getElementById("user-name");
+user_name.innerHTML = currentUser.name
+const user_email=document.getElementById("user-email");
+user_email.innerHTML = currentUser.email
+console.log(currentUser);

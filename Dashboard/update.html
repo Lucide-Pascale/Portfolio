@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Mybrand || Dashboard</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="update.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="shortcut icon" href="./assets/" type="image/x-icon">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js">
@@ -62,12 +63,12 @@
     </div>
     <div class="sidebar__profile">
       <div class="avatar__wrapper">
-        <img class="avatar" src="https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg">
+        <img class="avatar" src="./assets/profile.JPG">
         <div class="online__status"></div>
       </div>
       <section class="avatar__name hide">
-        <div class="user-name" id="user-name">MUGISHA</div>
-        <div class="email" id="user-email">mugishajoseph092@gmail.com</div>
+        <div class="user-name">MUGISHA</div>
+        <div class="email">mugishajoseph092@gmail.com</div>
       </section>
       <button href="#logout" class="logout" id="logout" onclick="logoutFunc()">
         <i class='bx bx-log-in'></i>
@@ -75,162 +76,44 @@
     </div>
   </nav>
   <main class="tab-content-wrapper ">
-    <section id="graph" class="graph" style="display: none; display: block;">
-      <div class="widget">
-        <canvas id="chart"></canvas>
-      </div>
-      <div class="summary">
-        <div class="first">
-          <div class="item">
-            <p>January</p>
-            <p>2235</p>
-          </div>
-          <div class="item">
-            <p>February</p>
-            <p>2235</p>
-          </div>
-          <div class="item">
-            <p>March</p>
-            <p>2235</p>
-          </div>
-          <div class="item">
-            <p>April</p>
-            <p>2235</p>
-          </div>
-          <div class="item">
-            <p>May</p>
-            <p>2235</p>
-          </div>
-          <div class="item">
-            <p>June</p>
-            <p>2235</p>
-          </div>
-        </div>
-        <div class="second">
-          <div class="item">
-            <p>July</p>
-            <p>2235</p>
-          </div>
-          <div class="item">
-            <p>August</p>
-            <p>2235</p>
-          </div>
-          <div class="item">
-            <p>September</p>
-            <p>2235</p>
-          </div>
-          <div class="item">
-            <p>October</p>
-            <p>2235</p>
-          </div>
-          <div class="item">
-            <p>November</p>
-            <p>2235</p>
-          </div>
-          <div class="item">
-            <p>December</p>
-            <p>2235</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <section id="users" class="users" style="display: nofne;">
-      <div class="table-widget">
-        <table>
-          <caption>
-            Users
-            <span class="table-row-count"></span>
-          </caption>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Status</th>
-              <th>Email address</th>
-              <th>User Role</th>
-              <th>Delete</th>
-              <th>Edit</th>
-            </tr>
-          </thead>
-          <tbody id="user" style="overflow-y: scroll;">
-
-          </tbody>
-        </table>
-      </div>
-    </section>
-    <section id="notifications" class="notification" style="display: nofne;">
-      <div class="table-widget">
-        <table>
-          <caption>
-            <span class="notification-count"></span>
-          </caption>
-          <tbody id="notification-body" style="overflow-y: scroll;">
-            <!-- The notifications will be added here dynamically -->
-          </tbody>
-        </table>
-      </div>
-    </section>
     <section id="blogs">
       <div class="table-widget">
         <div class="centering">
-          <div class="articles">
-            <!-- Blogs will be dynamically added here -->
-          </div>
-          <div class="add">
-            <button type="button" class="share-btn" onclick="openDialog()">+ Add Blog</button>
-          </div>
-          <dialog id="add-blog-dialog" class="copy-link-dialog">
+          <div id="add-blog-dialog" class="copy-link-dialog">
             <form id="blog-form" onsubmit="saveBlog(event)">
               <div class="bottom-zone">
                 <div class="dropzone-box" style="margin: 30px 0;">
                   <header>
-                    <h2>New Blog</h2>
+                    <h2>Update Blog</h2>
                   </header>
                   <div class="copy-link-dialog__content">
                     <div class="input-wrapper">
-                      <input type="text" name="title" id="blog_title" placeholder="Enter blog title" required>
-                      <textarea name="content" id="blog_content" cols="30" rows="5" placeholder="Enter blog description" required></textarea>
+                      <input type="text" name="title" id="update_title" placeholder="Enter blog title" required>
+                      <textarea name="content" id="update_content" cols="30" rows="5" placeholder="Enter blog description"
+                        required></textarea>
+                      <img src="profile.JPG" class="blog_cover" id="blog_cover" alt="" srcset="">
                     </div>
                   </div>
                   <p>Attach Cover Of Blog</p>
                   <div class="dropzone-area">
                     <div class="file-upload-icon"></div>
                     <p>Click to upload or drag and drop</p>
-                    <input type="file" required id="upload-file" name="image">
+                    <input type="file" required id="update-file" name="image">
                     <p class="message">No Files Selected</p>
                   </div>
                   <div class="dropzone-actions">
-                    <button type="button" class="close-btn secondary" onclick="closeDialog()">
+                    <button type="button" class="close-btn secondary">
                       Cancel
                     </button>
-                    <button id="submit-button" type="submit">
-                      Save
+                    <button id="update-button" type="submit">
+                      Update
                     </button>
                   </div>
                 </div>
               </div>
             </form>
-          </dialog>
+          </div>
         </div>
-      </div>
-    </section>
-    <section id="message" class="users" style="display: nofne;">
-      <div class="table-widget">
-        <table>
-          <caption>
-            Messages
-            <span class="message-row-count"></span>
-          </caption>
-          <thead>
-            <tr>
-              <th>Names</th>
-              <th>Message</th>
-            </tr>
-          </thead>
-          <tbody id="messages" style="overflow-y: scroll;">
-
-          </tbody>
-        </table>
       </div>
     </section>
   </main>
@@ -253,6 +136,7 @@
     integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="script.js"></script>
+  <script src="update.js"></script>
 </body>
 
 </html>

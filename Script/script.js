@@ -242,3 +242,21 @@ let toastBox=document.getElementById("toastBox");
 let SuccessMsg=`<i class="fa-solid fa-circle-check"></i>successfully created`;
 let errorMsg=`<i class="fa-solid fa-circle-xmark"></i>Error`;
 let invalidMsg=`<i class="fa-solid fa-circle-info"></i>Invalid`;
+
+
+const viewFunc=()=>{
+  if(localStorage.getItem('jwt')){
+    const login_nav=document.getElementById('login_nav');
+    login_nav.style.display="none";
+    const logout_nav=document.getElementById('logout_nav');
+    logout_nav.style.display="block";
+    logout_nav.addEventListener('click',()=>{
+      localStorage.removeItem('jwt')
+      window.location.reload();
+    })
+    const sigin=document.getElementById('sigin');
+    sigin.style.display="none";
+    
+  }
+}
+viewFunc()

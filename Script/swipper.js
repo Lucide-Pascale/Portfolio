@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               <div class="blog-content">
                 <div class="date">${formattedDate}</div>
                 <div class="desc">
-                  <p><a href="singleBlog.html?blogId=${blog._id}">${blog.content}</a></p>
+                  <p><a href="singleBlog.html?blogId=${blog._id}">${blog.title}</a></p>
                 </div>
                 <div class="like-comment">
                   <div class="item">

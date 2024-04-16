@@ -123,11 +123,9 @@ const posting_comment_func = async (comment) => {
 };
 
 newCommentForm.addEventListener("submit", (e) => {
-  console.log(e);
   const newCommentTextareaValue = newCommentTextarea.value;
   posting_comment_func(newCommentTextareaValue);
   newCommentForm.reset();
-  window.location.href='www.google.com'
 });
 
 const fetchBlogPosts=async()=> {
