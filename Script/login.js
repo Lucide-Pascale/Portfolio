@@ -26,6 +26,7 @@ const login_func = async (email, password) => {
     getLoginToken();
   } catch (e) {
     console.log(e.response, "error");
+    alert(e.response.data.message)
   }
 };
 // const user=localStorage.getItem("user");
