@@ -18,7 +18,7 @@ const login_func = async (email, password) => {
     localStorage.setItem("user", JSON.stringify(res.data.user));
     console.log(res.data.user.role);
     if (res.data.user.role == "admin") {
-      window.location.href = "/Dashboard";
+      window.location.href = "Dashboard/index.html";
     }
     else{
       window.location.reload();
