@@ -28,12 +28,25 @@ const updating_Blog_func = async (title, content, cover) => {
     };
 
     const res = await axios.patch(`http://localhost:8081/api/blog/${blogId}`, formData, config);
-    console.log(res.data.Blog); // Assuming the response structure is res.data.Blog
-    alert("Blog updated successfully");
-    window.location.reload();
+    console.log(res.data.Blog); ;
+    iziToast.show({
+      message: "Blog updated successfully",
+      position: "topRight",
+      progressBarColor: "#7a3fdf",
+      timeout: 2000,
+    });
+    setTimeout(()=>{
+      window.location.reload();
+    },2000)
   } catch (e) {
     console.error(e.response);
     alert("Error updating blog");
+    iziToast.error({
+      message: "Error in updating blog",
+      position: "red",
+      progressBarColor: "#7a3fdf",
+      timeout: 2000,
+    });
   }
 };
 
@@ -41,7 +54,7 @@ const fetchBlogPost = async () => {
     console.log("Fetching blog posts");
     try {
         const response = await axios({
-            url: `http://localhost:8081/api/blog/${blogId}`,
+            url: `https://my-brand-be-1-p2x5.onrender.com/api/blog/${blogId}`,
             method: 'GET',
         });
         const blog = response.data.data.Blog;

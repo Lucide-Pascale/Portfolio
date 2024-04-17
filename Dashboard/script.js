@@ -137,133 +137,24 @@ new Chart(ctx, {
 
 // users
 
-const teamMemberss = [
-  {
-    src: "./assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "offline",
-  },
-  {
-    src: "../assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "inactive",
-  },
-  {
-    src: "/assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "active",
-  },
-  {
-    src: "/assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "active",
-  },
-  {
-    src: "/assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "active",
-  },
-  {
-    src: "/assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "active",
-  },
-  {
-    src: "/assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "active",
-  },
-  {
-    src: "/assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "active",
-  },
-  {
-    src: "/assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "active",
-  },
-  {
-    src: "/assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "active",
-  },
-  {
-    src: "/assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "active",
-  },
-  {
-    src: "./assets/profile.jpg",
-    name: "Joseph Ishimwe",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "offline",
-  },
-  {
-    src: "./assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "active",
-  },
-  {
-    src: "./assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "active",
-  },
-  {
-    src: "./assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "active",
-  },
-  {
-    src: "./assets/profile.jpg",
-    name: "Joseph MUGISHA",
-    alias: "@joseph",
-    email: "mugisha092@gmail.com",
-    status: "active",
-  },
-];
-
-// users
 const deleteUser = async (userId, authToken) => {
   try {
     const res = await axios({
       method: "DELETE",
-      url: `http://localhost:8081/api/users/${userId}`,
+      url: `https://my-brand-be-1-p2x5.onrender.com/api/users/${userId}`,
       headers: { Authorization: `Bearer ${authToken}` },
     });
     console.log(res.data);
+    iziToast.show({
+      message: "User deleted successful",
+      position: "topRight",
+      progressBarColor: "#7a3fdf",
+      timeout: 2000,
+    });
     console.log(userId);
-    window.location.reload();
-    // You might want to refresh the UI after deletion, such as fetching the updated user list
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
   } catch (error) {
     console.error("Error deleting user:", error);
   }
@@ -274,7 +165,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     const teamMember = await axios({
       method: "GET",
-      url: "http://localhost:8081/api/users",
+      url: "https://my-brand-be-1-p2x5.onrender.com/api/users",
       headers: { Authorization: `Bearer ${authToken}` },
     });
     let userCount = document.querySelector(".table-row-count");
@@ -431,19 +322,21 @@ logout.addEventListener("click", logoutFunc);
 
 function logoutFunc() {
   console.log("logged out");
-  const Message = "Logged out";
-  showNotification(Message);
-  console.log("logged out");
+  const Message = "Logged out successfully";
+  iziToast.show({
+    message: "Account created successful",
+    position: "topRight",
+    progressBarColor: "#7a3fdf",
+  });
   setTimeout(() => {
     localStorage.removeItem("jwt");
     window.location.href = "../index.html";
   }, 2000);
 }
-var messageinput = document.getElementById("messageinput");
-function showNotification(message) {
-  var notification = document.querySelector(".notifications");
-  messageinput.innerHTML = message;
-  notification.style.display = "block";
+
+function blogAlert(message) {
+  console.log("message: " + message);
+  showNotification(message);
 }
 
 const modalDialog = document.querySelector(".copy-link-dialog");
@@ -524,11 +417,17 @@ const deleteMessage = async (messageId, authToken) => {
   try {
     const res = await axios({
       method: "DELETE",
-      url: `http://localhost:8081/api/messages/${messageId}`,
+      url: `https://my-brand-be-1-p2x5.onrender.com/api/messages/${messageId}`,
       headers: { Authorization: `Bearer ${authToken}` },
     });
     console.log(res.data);
     console.log(messageId);
+    iziToast.show({
+      message: "Message deleted successfully",
+      position: "topRight",
+      progressBarColor: "#7a3fdf",
+      timeout: 2000,
+    });
   } catch (error) {
     console.error("Error deleting message:", error);
   }
@@ -540,7 +439,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const messages = await axios({
       method: "GET",
-      url: "http://localhost:8081/api/messages",
+      url: "https://my-brand-be-1-p2x5.onrender.com/api/messages",
       headers: { Authorization: `Bearer ${authtoken}` },
     });
     let message = messages.data.data.messages;
@@ -574,8 +473,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         const userId = event.target.dataset.messageid;
         console.log(userId); // Get user ID from data attribute
         deleteMessage(userId, authtoken); // Pass user ID to deleteUser function
-        alert("Message deleted");
-        window.location.reload();
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
       });
     });
   } catch (e) {
@@ -587,16 +487,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 document
   .getElementById("submit-button")
   .addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the default form submission behavior
-
-    // Retrieve form data
+    event.preventDefault();
     const title = document.getElementById("blog_title").value;
     const content = document.getElementById("blog_content").value;
     const image = document.getElementById("upload-file").files[0];
     console.log(title, content, image);
 
     if (!title || !image) {
-      alert("Please enter a title and upload a cover image.");
+      iziToast.show({
+        message: "Please enter a title and upload a cover image.",
+        position: "topRight",
+        progressBarColor: "#7a3fdf",
+        timeout: 2000,
+      });
       return;
     }
 
@@ -613,7 +516,7 @@ const posting_Blog_func = async (title, content, cover) => {
 
     const res = await axios({
       method: "POST",
-      url: "http://localhost:8081/api/blog",
+      url: "https://my-brand-be-1-p2x5.onrender.com/api/blog",
       data: formData,
       headers: {
         Authorization: `Bearer ${authtoken}`,
@@ -621,11 +524,23 @@ const posting_Blog_func = async (title, content, cover) => {
       },
     });
     console.log(res.data.data.Blog);
-    alert("Blog created successfully");
-    window.location.reload();
+    iziToast.show({
+      message: "Blog created successfully",
+      position: "topRight",
+      progressBarColor: "#7a3fdf",
+      timeout: 2000,
+    });
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
   } catch (e) {
     console.log(e.response);
-    alert(e);
+    iziToast.error({
+      message: e.response.data.message,
+      position: "topRight",
+      progressBarColor: "#7a3fdf",
+      timeout: 2000,
+    });
   }
 };
 
@@ -634,11 +549,17 @@ const deleteBlog = async (blogId, authToken) => {
   try {
     const res = await axios({
       method: "DELETE",
-      url: `http://localhost:8081/api/blog/${blogId}`,
+      url: `https://my-brand-be-1-p2x5.onrender.com/api/blog/${blogId}`,
       headers: { Authorization: `Bearer ${authToken}` },
     });
-    alert("Blog deleted successfully");
-    window.location.reload();
+    iziToast.show({
+      message: "Blog deleted successfully",
+      position: "topRight",
+      progressBarColor: "#7a3fdf",
+    });
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
     console.log(res.data);
     console.log(messageId);
   } catch (error) {
@@ -648,7 +569,7 @@ const deleteBlog = async (blogId, authToken) => {
 function saveBlog(event) {
   event.preventDefault();
 
-  // Get form data
+ 
   const formData = new FormData(event.target);
   const title = formData.get("title");
   const content = formData.get("content");
@@ -662,7 +583,7 @@ function saveBlog(event) {
   displayBlog(blog);
 }
 
-// Function to display a blog
+
 function displayBlog(blog) {
   const articlesDiv = document.querySelector(".articles");
 
@@ -677,7 +598,9 @@ function displayBlog(blog) {
         blog._id
       }', '${localStorage.getItem(
     "jwt"
-  )}')"></i><i class='bx bx-edit' onclick="updateDirect('${blog._id}')"></i></div>
+  )}')"></i><i class='bx bx-edit' onclick="updateDirect('${
+    blog._id
+  }')"></i></div>
     </div>
   `;
 
@@ -687,7 +610,7 @@ function displayBlog(blog) {
 const fetchBlogPosts = async () => {
   try {
     const response = await axios({
-      url: `http://localhost:8081/api/blog`,
+      url: `https://my-brand-be-1-p2x5.onrender.com/api/blog`,
       method: "GET",
     });
     const sampleBlogs = response.data.data.Blogs;
@@ -706,15 +629,12 @@ const fetchBlogPosts = async () => {
 fetchBlogPosts();
 
 const updateDirect = (blogId) => {
-  window.location.href = "update.html?blog_id=" + blogId+"#blogs";
+  window.location.href = "update.html?blog_id=" + blogId + "#blogs";
 };
-
-
 
 const currentUserString = localStorage.getItem("user");
 const currentUser = JSON.parse(currentUserString);
-const user_name=document.getElementById("user-name");
-user_name.innerHTML = currentUser.name
-const user_email=document.getElementById("user-email");
-user_email.innerHTML = currentUser.email
-console.log(currentUser);
+const user_name = document.getElementById("user-name");
+user_name.innerHTML = currentUser.name;
+const user_email = document.getElementById("user-email");
+user_email.innerHTML = currentUser.email;

@@ -31,6 +31,9 @@
   font-style: normal;
 }
 
+.alert{
+  display: none;
+}
 
 body {
   background: var(secondText-color);
@@ -873,9 +876,6 @@ td:nth-child(5) i{
   border: none;
   border-radius: 2px;
   color: var(--gray-background);
-}
-.close-btn i{
-
 }
 .close-btn svg {
   stroke: var(--gray-dark);

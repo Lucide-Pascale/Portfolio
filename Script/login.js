@@ -7,7 +7,7 @@ const login_func = async (email, password) => {
   try {
     const res = await axios({
       method: "POST",
-      url: "http://localhost:8081/api/users/login",
+      url: "https://my-brand-be-1-p2x5.onrender.com/api/users/login",
       data: {
         email: email,
         password: password,
@@ -17,23 +17,30 @@ const login_func = async (email, password) => {
     localStorage.setItem("jwt", res.data.token);
     localStorage.setItem("user", JSON.stringify(res.data.user));
     console.log(res.data.user.role);
-    if (res.data.user.role == "admin") {
-      window.location.href = "Dashboard/index.html";
-    }
-    else{
-      window.location.reload();
-    }
+    iziToast.show({
+      message: "Login successful",
+      position: "topRight",
+      progressBarColor: "#7a3fdf",
+      timeout: 2000,
+    });
+    setTimeout(() => {
+      if (res.data.user.role == "admin") {
+        window.location.href = "Dashboard/index.html";
+      } else {
+        window.location.reload();
+      }
+    }, 3000);
     getLoginToken();
   } catch (e) {
     console.log(e.response, "error");
-    alert(e.response.data.message)
+    iziToast.error({
+      message: e.response.data.message,
+      position: "topRight",
+      progressBarColor: "red",
+      timeout: 2000,
+    });
   }
 };
-// const user=localStorage.getItem("user");
-// if (user.role == "admin") {
-//     window.location.href = "/Dashboard";
-//   }
-
 login_button.addEventListener("click", () => {
   console.log("Working on login");
   const login_email = document.getElementById("contact-emaill").value;
@@ -64,7 +71,7 @@ const signup_func = async (name, email, password, confirmPassword) => {
   try {
     const res = await axios({
       method: "POST",
-      url: "http://localhost:8081/api/users/signup",
+      url: "https://my-brand-be-1-p2x5.onrender.com/api/users/signup",
       data: {
         name: name,
         email: email,
@@ -78,13 +85,21 @@ const signup_func = async (name, email, password, confirmPassword) => {
     console.log(res.data);
     getLoginToken();
     console.log(res.data.data.User);
-    if (res.data.data.User.role == "admin") {
-      window.location.href = "/Dashboard";
-    } else {
-      window.location.reload();
-      const login_nav = document.getElementById("login_nav");
-      login_nav.innerHTML = "Logout";
-    }
+    iziToast.show({
+      message: "Account created successful",
+      position: "topRight",
+      progressBarColor: "#7a3fdf",
+      timeout: 2000,
+    });
+    setTimeout(() => {
+      if (res.data.data.User.role == "admin") {
+        window.location.href = "/Dashboard";
+      } else {
+        window.location.reload();
+        const login_nav = document.getElementById("login_nav");
+        login_nav.innerHTML = "Logout";
+      }
+    }, 2000);
   } catch (e) {
     console.log(e.response.data);
   }
@@ -107,7 +122,7 @@ const message_func = async (firstname, lastname, email, phone, message) => {
   try {
     const res = await axios({
       method: "POST",
-      url: "http://localhost:8081/api/messages/",
+      url: "https://my-brand-be-1-p2x5.onrender.com/api/messages/",
       data: {
         firstname,
         lastname,
@@ -117,7 +132,6 @@ const message_func = async (firstname, lastname, email, phone, message) => {
       },
     });
     console.log(res.data.message);
-    alert(res.data.message);
   } catch (e) {
     console.log(e.response.data);
     alert(e.response.data.message);
@@ -132,6 +146,12 @@ message_button.addEventListener("click", () => {
   const phone = document.getElementById("contact-phone").value;
   const message = document.getElementById("contact-message").value;
   message_func(firstname, lastname, email, phone, message);
+  iziToast.show({
+    message: "Message sent successful",
+    position: "topRight",
+    progressBarColor: "#7a3fdf",
+    timeout: 2000,
+  });
 });
 
 const comment_func = async (comment) => {
@@ -139,13 +159,14 @@ const comment_func = async (comment) => {
   try {
     const res = await axios({
       method: "POST",
-      url: "http://localhost:8081/api/messages/",
+      url: "https://my-brand-be-1-p2x5.onrender.com/api/messages/",
       data: {
         comment,
       },
     });
     console.log(res.data.message);
     alert(res.data.message);
+    window.location.href='/';
   } catch (e) {
     console.log(e.response.data);
     alert(e.response.data.message);
@@ -156,7 +177,7 @@ const comment_func1 = async () => {
   try {
     const res = await axios({
       method: "GET",
-      url: "http://localhost:8081/api/66178bc6736a6162a05ee56b/comment",
+      url: "https://my-brand-be-1-p2x5.onrender.com/api/66178bc6736a6162a05ee56b/comment",
     });
     console.log(res.data);
   } catch (e) {
@@ -169,6 +190,7 @@ comment_func1();
 const comment_button = document.getElementById("confirm-button");
 message_button.addEventListener("click", () => {
   message_func(firstname, lastname, email, phone, message);
+  window.location.href='/';
 });
 
 comment_func1();

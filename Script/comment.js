@@ -85,7 +85,7 @@ const comment_func1 = async () => {
   try {
     const res = await axios({
       method: "GET",
-      url: `http://localhost:8081/api/${blogId}/comment`,
+      url: `https://my-brand-be-1-p2x5.onrender.com/api/${blogId}/comment`,
       headers: { Authorization: `Bearer ${authtoken}` },
     });
     comment = res.data.data.comments;
@@ -111,7 +111,7 @@ const posting_comment_func = async (comment) => {
   try {
     const res = await axios({
       method: "POST",
-      url: `http://localhost:8081/api/${blogId}/comment`,
+      url: `https://my-brand-be-1-p2x5.onrender.com/api/${blogId}/comment`,
       data: {
         comment: comment,
       },
@@ -131,7 +131,7 @@ newCommentForm.addEventListener("submit", (e) => {
 const fetchBlogPosts=async()=> {
   try {
     const response = await axios({
-        url:`http://localhost:8081/api/blog/${blogId}`,
+        url:`https://my-brand-be-1-p2x5.onrender.com/api/blog/${blogId}`,
         method: 'GET',
     });
     const blog=response.data.data.Blog

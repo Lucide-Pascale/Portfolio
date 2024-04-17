@@ -14,7 +14,8 @@
   <link rel="stylesheet" href="./Styles/mobile.css">
   <link rel="shortcut icon" href="./Assets/logoM.png" type="image/x-icon">
   <link rel="stylesheet" href="./Styles/notification.css">
-
+  <link rel="stylesheet" href="css/iziToast.min.css">
+  <script src="js/iziToast.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -34,7 +35,8 @@
           <li onclick="clicked_links(this)" class="mobile-links"><a href="#Blogs">Blogs</a></li>
           <li onclick="clicked_links(this)" class="mobile-links"><a href="#Contact">Contact</a></li>
           <li onclick="clicked_links(this)" class="mobile-links" id="login_nav_mobile"><a href="#sigin">Login</a></li>
-          <li onclick="clicked_links(this)" class="mobile-links" id="logout_nav_mobile" style="display: none;"><a href="#sigin" >Logout</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links" id="logout_nav_mobile" style="display: none;"><a
+              href="#sigin">Logout</a></li>
           <li class="active">
             <a href="#"><i class="bx bxs-moon"></i></a>
           </li>
@@ -48,7 +50,8 @@
           <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Blogs">Blogs</a></li>
           <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Contact">Contact</a></li>
           <li onclick="clicked_links(this)" class="hideOnMobile" id="login_nav"><a href="#sigin">Login</a></li>
-          <li onclick="clicked_links(this)" class="mobile-links" id="logout_nav" style="display: none;"><a href="#sigin">Logout</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links" id="logout_nav" style="display: none;"><a
+              href="#sigin">Logout</a></li>
           <li class="hideOnMobile active">
             <i class="bx bxs-moon" id="darkModeToggle"></i></a>
           </li>
@@ -728,6 +731,5 @@
   <script src="./Script/notification.js"></script>
   <script src="./Script/login.js"></script>
 </body>
-
 
 </html>

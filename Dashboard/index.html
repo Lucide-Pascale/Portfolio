@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="style.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="shortcut icon" href="./assets/" type="image/x-icon">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../css/iziToast.min.css">
+  <script src="../js/iziToast.min.js" type="text/javascript"></script>
   </script>
 </head>
 
@@ -62,7 +64,8 @@
     </div>
     <div class="sidebar__profile">
       <div class="avatar__wrapper">
-        <img class="avatar" src="https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg">
+        <img class="avatar"
+          src="https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg">
         <div class="online__status"></div>
       </div>
       <section class="avatar__name hide">
@@ -189,7 +192,8 @@
                   <div class="copy-link-dialog__content">
                     <div class="input-wrapper">
                       <input type="text" name="title" id="blog_title" placeholder="Enter blog title" required>
-                      <textarea name="content" id="blog_content" cols="30" rows="5" placeholder="Enter blog description" required></textarea>
+                      <textarea name="content" id="blog_content" cols="30" rows="5" placeholder="Enter blog description"
+                        required></textarea>
                     </div>
                   </div>
                   <p>Attach Cover Of Blog</p>
@@ -234,7 +238,7 @@
       </div>
     </section>
   </main>
-  <figure class="notifications" style="display: none;">
+  <figure class="notifications alert">
     <div class="notification__body">
       <div class="notification__description">
         <div class="icon__wrapper">
