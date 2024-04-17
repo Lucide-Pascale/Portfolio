@@ -324,7 +324,7 @@ function logoutFunc() {
   console.log("logged out");
   const Message = "Logged out successfully";
   iziToast.show({
-    message: "Account created successful",
+    message: Message,
     position: "topRight",
     progressBarColor: "#7a3fdf",
   });
