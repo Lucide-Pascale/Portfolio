@@ -27,7 +27,7 @@ const updating_Blog_func = async (title, content, cover) => {
       },
     };
 
-    const res = await axios.patch(`http://localhost:8081/api/blog/${blogId}`, formData, config);
+    const res = await axios.patch(`https://my-brand-be-1-p2x5.onrender.com/api/blog/${blogId}`, formData, config);
     console.log(res.data.Blog); ;
     iziToast.show({
       message: "Blog updated successfully",
