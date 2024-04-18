@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const response = await axios({
     method: "GET",
-    url: "http://localhost:8081/api/blog",
+    url: "https://my-brand-be-1-p2x5.onrender.com/api/blog",
   });
   const blogs = response.data.data.Blogs;
   console.log(blogs);
@@ -117,10 +117,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                   <div class="item">
                     <i class='bx bx-heart'></i>
                     <p>${blog.likes}</p>
-                  </div>
-                  <div class="item">
-                    <i class='bx bxs-comment-dots'></i>
-                    <p>0</p>
                   </div>
                 </div>
               </div>

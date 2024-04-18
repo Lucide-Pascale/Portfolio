@@ -37,6 +37,7 @@ const updating_Blog_func = async (title, content, cover) => {
     });
     setTimeout(()=>{
       window.location.reload();
+      window.location.href="index.html#blogs"
     },2000)
   } catch (e) {
     console.error(e.response);
@@ -49,6 +50,11 @@ const updating_Blog_func = async (title, content, cover) => {
     });
   }
 };
+
+const cancel_button=document.getElementById('cancel_button');
+cancel_button.addEventListener('click',()=>{
+  window.location.href="index.html#blogs"
+})
 
 const fetchBlogPost = async () => {
     console.log("Fetching blog posts");
