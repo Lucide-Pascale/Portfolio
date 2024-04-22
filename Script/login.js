@@ -132,6 +132,12 @@ const message_func = async (firstname, lastname, email, phone, message) => {
       },
     });
     console.log(res.data.message);
+    iziToast.show({
+      message: res.data.message,
+      position: "topRight",
+      progressBarColor: "#7a3fdf",
+      timeout: 2000,
+    });
   } catch (e) {
     console.log(e.response.data);
     alert(e.response.data.message);
