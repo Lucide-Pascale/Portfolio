@@ -91,12 +91,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     blogs.push(blog);
   });
 
-  // Function to display blogs
+
   function displayBlogs() {
     const blogContainer = document.getElementById("blogContainer");
-    blogContainer.innerHTML = ""; // Clear previous content
+    blogContainer.innerHTML = "";
 
-    // Loop through the blogs array and create HTML elements
     blogs.forEach(function (blog) {
       const date = new Date(blog.CreateAt);
       const formattedDate = date.toLocaleDateString("en-US", {
@@ -104,6 +103,30 @@ document.addEventListener("DOMContentLoaded", async () => {
         month: "short",
         year: "numeric",
       });
+
+      const blogContainer = document.getElementById("blogContainer");
+
+      blogContainer.addEventListener("click", (event) => {
+        if (event.target.classList.contains("blogLink")) {
+            event.stopPropagation(); // Stop event propagation here
+            const blogId = event.target.dataset.blogId;
+            if (localStorage.getItem("jwt")) {
+                window.location.href = `singleBlog.html?blogId=${blogId}`;
+            } else {
+                if (!localStorage.getItem("loginToastShown")) {
+                    iziToast.show({
+                        message: "Please login first to visit single blog.",
+                        position: "topRight",
+                        progressBarColor: "#7a3fdf",
+                        timeout: 2000,
+                    });
+                    localStorage.setItem("loginToastShown", "true");
+                }
+            }
+        }
+    });
+    
+
       const blogHTML = `
           <div class="swiper-slide">
             <div class="blog">
@@ -111,7 +134,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               <div class="blog-content">
                 <div class="date">${formattedDate}</div>
                 <div class="desc">
-                  <p><a href="singleBlog.html?blogId=${blog._id}">${blog.title}</a></p>
+                  <p class="blogLink" data-blog-id="${blog._id}">${blog.title}</p>
                 </div>
                 <div class="like-comment">
                   <div class="item">

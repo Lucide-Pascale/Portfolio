@@ -259,4 +259,19 @@ const viewFunc=()=>{
     
   }
 }
+const mobileViewFunc=()=>{
+  if(localStorage.getItem('jwt')){
+    const login_nav=document.getElementById('login_nav_mobile');
+    login_nav.style.display="none";
+    const logout_nav=document.getElementById('logout_nav');
+    logout_nav.style.display="block";
+    logout_nav.addEventListener('click',()=>{
+      localStorage.removeItem('jwt')
+      window.location.reload();
+    })
+    const sigin=document.getElementById('sigin');
+    sigin.style.display="none";
+  }
+}
+mobileViewFunc()
 viewFunc()

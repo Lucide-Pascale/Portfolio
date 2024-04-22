@@ -1539,6 +1539,12 @@ footer .footer-logo .links ul a {
   }
 }
 
+.blogLink:hover{
+  color: #4f22cb;
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
 @media (max-width: 480px) {
   .header-links .sidebar {
     width: 100%;
@@ -1554,6 +1560,10 @@ footer .footer-logo .links ul a {
     justify-content: space-between;
     flex-direction: column;
     margin-top: 0px;
+  }
+  .logout_nav_mobile{
+    background-color: red;
+    margin: 20px;
   }
   body {
     margin: 0;
