@@ -107,19 +107,23 @@ document.addEventListener("DOMContentLoaded", async () => {
       const blogContainer = document.getElementById("blogContainer");
 
       blogContainer.addEventListener("click", (event) => {
+        
         if (event.target.classList.contains("blogLink")) {
+          localStorage.removeItem("loginToastShown");
             event.stopPropagation(); // Stop event propagation here
             const blogId = event.target.dataset.blogId;
             if (localStorage.getItem("jwt")) {
                 window.location.href = `singleBlog.html?blogId=${blogId}`;
             } else {
+              localStorage.removeItem("loginToastShown");
                 if (!localStorage.getItem("loginToastShown")) {
-                    iziToast.show({
-                        message: "Please login first to visit single blog.",
-                        position: "topRight",
-                        progressBarColor: "#7a3fdf",
-                        timeout: 2000,
-                    });
+                  iziToast.error({
+                    message: "Please login to view single blog",
+                    position: "topRight",
+                    progressBarColor: "red",
+                    timeout: 2000,
+                  });
+                    
                     localStorage.setItem("loginToastShown", "true");
                 }
             }
