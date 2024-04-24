@@ -486,18 +486,24 @@ document.addEventListener("DOMContentLoaded", async () => {
 // Attach event listener to the "Save" button
 document
   .getElementById("submit-button")
-  .addEventListener("click", function (event) {
+  .addEventListener("click", async (event) => {
     event.preventDefault();
+    let isloading = true;
     const title = document.getElementById("blog_title").value;
     const content = document.getElementById("blog_content").value;
     const image = document.getElementById("upload-file").files[0];
     console.log(title, content, image);
 
     if (!title || !image) {
-      iziToast.show({
+      // isloading = false;
+      // if(isloading) {
+      //   document.getElementById("submit-button").style.display = "block";
+      //   document.getElementById("submit-buttonn").style.display = "none";
+      // }
+      iziToast.error({
         message: "Please enter a title and upload a cover image.",
         position: "topRight",
-        progressBarColor: "#7a3fdf",
+        progressBarColor: "red",
         timeout: 2000,
       });
       return;
@@ -513,6 +519,11 @@ const posting_Blog_func = async (title, content, cover) => {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("image", cover);
+    let isloading = true;
+    if (isloading) {
+      document.getElementById("submit-button").style.display = "none";
+      document.getElementById("submit-buttonn").style.display = "block";
+    }
 
     const res = await axios({
       method: "POST",
@@ -523,6 +534,7 @@ const posting_Blog_func = async (title, content, cover) => {
         "Content-Type": "multipart/form-data",
       },
     });
+
     console.log(res.data.data.Blog);
     iziToast.show({
       message: "Blog created successfully",
@@ -534,6 +546,11 @@ const posting_Blog_func = async (title, content, cover) => {
       window.location.reload();
     }, 2000);
   } catch (e) {
+    isloading=true
+    if (isloading) {
+      document.getElementById("submit-button").style.display = "block";
+      document.getElementById("submit-buttonn").style.display = "none";
+    }
     console.log(e.response);
     iziToast.error({
       message: e.response.data.message,
@@ -569,7 +586,6 @@ const deleteBlog = async (blogId, authToken) => {
 function saveBlog(event) {
   event.preventDefault();
 
- 
   const formData = new FormData(event.target);
   const title = formData.get("title");
   const content = formData.get("content");
@@ -582,7 +598,6 @@ function saveBlog(event) {
 
   displayBlog(blog);
 }
-
 
 function displayBlog(blog) {
   const articlesDiv = document.querySelector(".articles");

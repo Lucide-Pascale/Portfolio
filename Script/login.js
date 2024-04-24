@@ -1,10 +1,16 @@
 const login_button = document.getElementById("login-btn");
 
 console.log("okayyyyyyyyyyyyyy");
-
 const login_func = async (email, password) => {
   console.log(email, password);
+  let isloading=false
+
   try {
+    isloading=true
+    if(isloading){
+      document.getElementById('login-btn').style.display = 'none';
+      document.getElementById('login-btn-loading').style.display = 'block';
+    }
     const res = await axios({
       method: "POST",
       url: "https://my-brand-be-1-p2x5.onrender.com/api/users/login",
@@ -13,6 +19,7 @@ const login_func = async (email, password) => {
         password: password,
       },
     });
+    isloading=false
     document.cookie = `jwt=${res.data.token}`;
     localStorage.setItem("jwt", res.data.token);
     localStorage.setItem("user", JSON.stringify(res.data.user));
@@ -32,6 +39,11 @@ const login_func = async (email, password) => {
     }, 3000);
     getLoginToken();
   } catch (e) {
+    isloading=false
+    if(!isloading){
+      document.getElementById('login-btn').style.display = 'block';
+      document.getElementById('login-btn-loading').style.display = 'none';
+    }
     console.log(e.response, "error");
     iziToast.error({
       message: e.response.data.message,

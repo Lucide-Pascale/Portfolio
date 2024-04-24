@@ -1411,6 +1411,56 @@ footer .footer-logo .links ul a {
   background-color: #7a3fdf97;
   border-radius: 3px;
 }
+#login-btn {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.spin {
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+  display: none;
+}
+
+
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading .text {
+  visibility: hidden;
+}
+
+.loading .spin {
+  display: block;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
+
 
 @media (max-width: 920px) {
   #home {

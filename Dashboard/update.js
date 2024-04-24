@@ -20,6 +20,12 @@ const updating_Blog_func = async (title, content, cover) => {
     formData.append("content", content);
     formData.append("image", cover);
 
+    let isloading = true;
+    if (isloading) {
+      document.getElementById("update-button").style.display = "none";
+      document.getElementById("update-buttonn").style.display = "block";
+    }
+
     const config = {
       headers: {
         Authorization: `Bearer ${authtoken}`,
@@ -40,12 +46,11 @@ const updating_Blog_func = async (title, content, cover) => {
       window.location.href="index.html#blogs"
     },2000)
   } catch (e) {
-    console.error(e.response);
-    alert("Error updating blog");
+    console.error(e,"walllllllll");
     iziToast.error({
       message: "Error in updating blog",
-      position: "red",
-      progressBarColor: "#7a3fdf",
+      position: "topRight",
+      progressBarColor: "red",
       timeout: 2000,
     });
   }

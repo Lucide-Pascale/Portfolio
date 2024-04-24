@@ -50,7 +50,9 @@
           <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Blogs">Blogs</a></li>
           <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Contact">Contact</a></li>
           <li onclick="clicked_links(this)" class="hideOnMobile" id="login_nav"><a href="#sigin">Login</a></li>
-          <li onclick="clicked_links(this)" class="mobile-links" id="logout_nav" style="display: none; background:#ff00009a; color: #fff; padding: 5px; border-radius: 4px; cursor: pointer;">Logout</li>
+          <li onclick="clicked_links(this)" class="mobile-links" id="logout_nav"
+            style="display: none; background:#ff00009a; color: #fff; padding: 5px; border-radius: 4px; cursor: pointer;">
+            Logout</li>
           <li class="hideOnMobile active">
             <i class="bx bxs-moon" id="darkModeToggle"></i></a>
           </li>
@@ -635,6 +637,12 @@
                 <p id="passwordError" style="font-size: .5rem; color: red;"></p>
               </div>
               <button id="login-btn">Sign in</button>
+              <button id="login-btn-loading" class="loading" style="display: none;">
+                <div style="display: flex; align-items: center; justify-content: center;">
+                  <div class="spin"></div>
+                  <div style="padding-left: 15px;">Sign in</div>
+                </div>
+              </button>
               <p><u>Forget password?</u></p>
               <p>Don’t you have an account ? <u onclick="hide()">Sign Up Now</u></p>
             </div>
