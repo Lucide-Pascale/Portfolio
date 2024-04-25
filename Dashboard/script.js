@@ -1,6 +1,6 @@
 const expand_btn = document.querySelector(".expand-btn");
 if(!localStorage.getItem('jwt')){
-  window.location.href='/'
+  window.location.href='/my-brand'
 }
 const currentUserString = localStorage.getItem("user");
 const currentUser = JSON.parse(currentUserString);
