@@ -1,4 +1,12 @@
 const expand_btn = document.querySelector(".expand-btn");
+if(!localStorage.getItem('jwt')){
+  window.location.href='/'
+}
+const currentUserString = localStorage.getItem("user");
+const currentUser = JSON.parse(currentUserString);
+if(currentUser.role=='user'){
+  window.location.href='/'
+}
 
 let activeIndex;
 
@@ -648,15 +656,10 @@ const updateDirect = (blogId) => {
   window.location.href = "update.html?blog_id=" + blogId + "#blogs";
 };
 
-const currentUserString = localStorage.getItem("user");
-const currentUser = JSON.parse(currentUserString);
+
 const user_name = document.getElementById("user-name");
 user_name.innerHTML = currentUser.name;
 const user_email = document.getElementById("user-email");
 user_email.innerHTML = currentUser.email;
 
 console.log(currentUser);
-
-if(!localStorage.getItem('jwt')){
-  window.location.href='/#login'
-}
