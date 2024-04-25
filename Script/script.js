@@ -252,6 +252,7 @@ const viewFunc=()=>{
     logout_nav.style.display="block";
     logout_nav.addEventListener('click',()=>{
       localStorage.removeItem('jwt')
+      localStorage.removeItem('user')
       window.location.reload();
     })
     const sigin=document.getElementById('sigin');

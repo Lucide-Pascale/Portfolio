@@ -330,6 +330,7 @@ function logoutFunc() {
   });
   setTimeout(() => {
     localStorage.removeItem("jwt");
+    localStorage.removeItem("user");
     window.location.href = "../index.html";
   }, 2000);
 }
@@ -653,3 +654,9 @@ const user_name = document.getElementById("user-name");
 user_name.innerHTML = currentUser.name;
 const user_email = document.getElementById("user-email");
 user_email.innerHTML = currentUser.email;
+
+console.log(currentUser);
+
+if(!localStorage.getItem('jwt')){
+  window.location.href='/#login'
+}

@@ -110,7 +110,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         
         if (event.target.classList.contains("blogLink")) {
           localStorage.removeItem("loginToastShown");
-            event.stopPropagation(); // Stop event propagation here
             const blogId = event.target.dataset.blogId;
             if (localStorage.getItem("jwt")) {
                 window.location.href = `singleBlog.html?blogId=${blogId}`;
