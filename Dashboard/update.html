@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Mybrand || Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="update.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="shortcut icon" href="./assets/" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../css/iziToast.min.css">
+  <script src="../js/iziToast.min.js" type="text/javascript"></script>
+  </script>
+</head>
+
+<body>
+  <nav class="sidebar">
+    <div class="top">
+      <div class="sidebar-top-wrapper">
+        <div class="sidebar-top">
+          <a href="#" class="logo__wrapper">
+            <img src="assets/logoM.png" alt="Logo" class="logo-small">
+          </a>
+        </div>
+        <div class="expand-btn">
+          <i class='bx bx-chevrons-right'></i>
+        </div>
+      </div>
+      <div class="sidebar-links">
+        <ul>
+          <li>
+            <a href="#graph" title="Analystics">
+              <i class='bx bxs-bar-chart-square'></i>
+              <span class="link hide">Analistics</span>
+            </a>
+          </li>
+          <li>
+            <a href="#messages" title="Messages">
+              <i class='bx bx-message-dots'></i>
+              <span class="link hide">Message</span>
+            </a>
+          </li>
+          <li>
+            <a href="#blogs" title="Blogs">
+              <i class='bx bxl-blogger'></i>
+              <span class="link hide">Blogs</span>
+            </a>
+          </li>
+          <li>
+            <a href="#notifications" title="Notifications">
+              <i class='bx bxs-bell'></i>
+              <span class="link hide">Notification</span>
+            </a>
+          </li>
+          <li>
+            <a href="#users" title="Users">
+              <i class='bx bx-group'></i>
+              <span class="link hide">Users</span>
+            </a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="sidebar__profile">
+      <div class="avatar__wrapper">
+        <img class="avatar" src="./assets/profile.JPG">
+        <div class="online__status"></div>
+      </div>
+      <section class="avatar__name hide">
+        <div class="user-name">MUGISHA</div>
+        <div class="email">mugishajoseph092@gmail.com</div>
+      </section>
+      <button href="#logout" class="logout" id="logout" onclick="logoutFunc()">
+        <i class='bx bx-log-in'></i>
+      </button>
+    </div>
+  </nav>
+  <main class="tab-content-wrapper ">
+    <section id="blogs">
+      <div class="table-widget">
+        <div class="centering">
+          <div id="add-blog-dialog" class="copy-link-dialog">
+            <form id="blog-form" onsubmit="saveBlog(event)">
+              <div class="bottom-zone">
+                <div class="dropzone-box" style="margin: 30px 0;">
+                  <header>
+                    <h2>Update Blog</h2>
+                  </header>
+                  <div class="copy-link-dialog__content">
+                    <div class="input-wrapper">
+                      <input type="text" name="title" id="update_title" placeholder="Enter blog title" required>
+                      <textarea name="content" id="update_content" cols="30" rows="5"
+                        placeholder="Enter blog description" required></textarea>
+                      <img src="profile.JPG" class="blog_cover" id="blog_cover" alt="" srcset="">
+                    </div>
+                  </div>
+                  <p>Attach Cover Of Blog</p>
+                  <div class="dropzone-area">
+                    <div class="file-upload-icon"></div>
+                    <p>Click to upload or drag and drop</p>
+                    <input type="file" required id="update-file" name="image">
+                    <p class="message">No Files Selected</p>
+                  </div>
+                  <div class="dropzone-actions">
+                    <button type="button" class="close-btn secondary" id="cancel_button">
+                      Cancel
+                    </button>
+                    <button id="update-button" type="submit">
+                      Update
+                    </button>
+                    <button id="update-buttonn" type="submit" class="loading" style="display: none;">
+                      <div style="display: flex; align-items: center; justify-content: center;">
+                        <div class="spin"></div>
+                        <div style="padding-left: 15px;">Update</div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <figure class="notifications" style="display: none;">
+    <div class="notification__body">
+      <div class="notification__description">
+        <div class="icon__wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+            stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l5 5l10 -10"></path>
+          </svg>
+        </div>
+        <span id="messageinput"></span>
+      </div>
+    </div>
+    <div class="notification__progress"></div>
+  </figure>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+    integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="script.js"></script>
+  <script src="update.js"></script>
+</body>
+
+</html>

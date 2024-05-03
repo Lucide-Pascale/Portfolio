@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Brand || Portfolio</title>
+  <link rel="stylesheet" href="./Styles/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./Styles/style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./Styles/mobile.css">
+  <link rel="shortcut icon" href="./Assets/logoM.png" type="image/x-icon">
+  <link rel="stylesheet" href="./Styles/notification.css">
+  <link rel="stylesheet" href="css/iziToast.min.css">
+  <script src="js/iziToast.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="./Assets/logoM.png" alt="" />
+      </div>
+      <div class="header-links">
+        <ul class="nav-list activee sidebar " id="navList">
+          <li onclick=hideSidebar() class="menu-icon"><i class="fa-solid fa-xmark"></i></li>
+          <li class="active mobile-links" onclick="clicked_links(this)"><a href="#home">Home</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links"><a href="#About">About</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links"><a href="#Skills">Skills</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links"><a href="#Portfolio">Portfolio</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links"><a href="#Services">Services</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links"><a href="#Blogs">Blogs</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links"><a href="#Contact">Contact</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links" id="login_nav_mobile"><a href="#sigin">Login</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links" id="logout_nav_mobile" style="display: none;"><a
+              href="#sigin">Logout</a></li>
+          <li class="active">
+            <a href="#"><i class="bx bxs-moon"></i></a>
+          </li>
+        </ul>
+        <ul class="nav-list activee" id="navList">
+          <li onclick="clicked_link(this)" class="hideOnMobile active"><a href="#home">Home</a></li>
+          <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#About">About</a></li>
+          <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Skills">Skills</a></li>
+          <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Portfolio">Portfolio</a></li>
+          <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Services">Services</a></li>
+          <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Blogs">Blogs</a></li>
+          <li onclick="clicked_link(this)" class="hideOnMobile"><a href="#Contact">Contact</a></li>
+          <li onclick="clicked_links(this)" class="hideOnMobile" id="login_nav"><a href="#sigin">Login</a></li>
+          <li onclick="clicked_links(this)" class="mobile-links" id="logout_nav"
+            style="display: none; background:#ff00009a; color: #fff; padding: 5px; border-radius: 4px; cursor: pointer;">
+            Logout</li>
+          <li class="hideOnMobile active">
+            <i class="bx bxs-moon" id="darkModeToggle"></i></a>
+          </li>
+          <li onclick="showSidebar()" class="menu-icon"><i class='bx bx-menu'></i></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+  <main>
+    <div id="toastBox">
+    </div>
+    <!--  Home Page  -->
+    <section id="home" class="home">
+      <div class="home-right">
+        <img src="./Assets/profile.JPG" alt="">
+        <div></div>
+      </div>
+      <div class="home-left">
+        <div class="top">
+          <p>Hello mate! 👋 <br> <span class="joseph">I’m Joseph MUGISHA</span></br></p>
+          <p class="Full-Stack"><span class="full">Full-Stack
+              Developer</span><br>With a high level of experience, I can create beautiful, functional, and
+            user-friendly websites</p>
+        </div>
+        <div class="bottom">
+          <div class="btns">
+            <button><span>Contact Me</span><span><i class='bx bx-send'></i></span></button>
+            <button><span>Download CV</span><span><i class='bx bx-download'></i></span></button>
+          </div>
+          <div class="social">
+            <i class='bx bxl-facebook-circle'></i>
+            <i class='bx bxl-instagram-alt'></i>
+            <i class='bx bxl-linkedin-square'></i>
+            <i class='bx bxl-github'></i>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!--  About Page  -->
+    <section id="About">
+      <div class="about-left">
+      </div>
+      <div class="about-right">
+        <div class="right-top">
+          <h3 class="title">About <span>Me</span></h3>
+          <div>
+            <p>I'm <span>Joseph</span></p>
+            <p style="color: var(--primarytext-color); font-size: 01rem;">I am a highly skilled and dedicated software
+              engineer with a passion for creating innovative and efficient software solutions. With a strong
+              educational
+              background and years of hands-on experience, I possesses a deep understanding of software development
+              principles and practices</p>
+          </div>
+        </div>
+        <div class="right-bootom">
+          <div class="exp">
+            <div>
+              <span>4</span>
+              <div>
+                <p>YEARS
+                </p>
+                <p>EXPERIENCE</p>
+              </div>
+            </div>
+            <div>
+              <span>9+</span>
+              <div>
+                <p>CLIENTS
+                </p>
+                <p>WORLD WIDE</p>
+              </div>
+            </div>
+            <div>
+              <span>30+</span>
+              <div>
+                <p>TOTAL
+                </p>
+                <p>PROJECT</p>
+              </div>
+            </div>
+          </div>
+          <div class="btn">
+            <button id="downloadButton"><span>Download CV</span><span><i class='bx bx-download'></i></span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  Skills Page  -->
+    <section id="Skills">
+      <h3 class="title"><span>My </span>Skills</h3>
+      <div class="skill-cont">
+        <div class="technologies">
+          <h3>Technologies</h3>
+          <div>
+            <div class="item">
+              <div class="icon"><i class='bx bxl-html5'></i></div>
+              <div class="name">Html</div>
+            </div>
+            <div class="item">
+              <div class="icon"><i class='bx bxl-css3'></i></div>
+              <div class="name">CSS</div>
+            </div>
+            <div class="item">
+              <div class="icon"><i class='bx bxl-javascript'></i></div>
+              <div class="name">JavaScript</div>
+            </div>
+            <div class="item">
+              <div class="icon"><i class='bx bxl-tailwind-css'></i></div>
+              <div class="name">Tailwind</div>
+            </div>
+            <div class="item">
+              <div class="icon"><i class='bx bxl-react'></i></div>
+              <div class="name">ReactJS</div>
+            </div>
+            <div class="item">
+              <div class="icon"><i class='bx bxl-nodejs'></i></div>
+              <div class="name">NodeJS</div>
+            </div>
+            <div class="item">
+              <div class="icon"><i class='bx bxl-php'></i></div>
+              <div class="name">PHP</div>
+            </div>
+            <div class="item">
+              <div class="icon"><i class='bx bxl-mongodb'></i></div>
+              <div class="name">MongoDB</div>
+            </div>
+          </div>
+        </div>
+        <div class="skills">
+          <div class="end">
+            <div class="header">
+              <div class="icon"><i class='bx bx-code-alt'></i></div>
+              <div class="titlee">
+                <p>Frontend developer</p>
+                <p>3 Years Experience</p>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="left">
+                <div class="progress">
+                  <div class="text">
+                    <p>HTML</p>
+                    <p>90%</p>
+                  </div>
+                  <div class="full">
+                    <div class="part"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="text">
+                    <p>JavaScript</p>
+                    <p>60%</p>
+                  </div>
+                  <div class="full">
+                    <div class="part" style="width: 60%;"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="text">
+                    <p>ReactJS</p>
+                    <p>40%</p>
+                  </div>
+                  <div class="full">
+                    <div class="part" style="width: 40%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="progress">
+                  <div class="text">
+                    <p>HTML</p>
+                    <p>90%</p>
+                  </div>
+                  <div class="full">
+                    <div class="part"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="text">
+                    <p>JavaScript</p>
+                    <p>60%</p>
+                  </div>
+                  <div class="full">
+                    <div class="part" style="width: 60%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="end">
+            <div class="header">
+              <div class="icon"><i class='bx bx-code-alt'></i></div>
+              <div class="titlee">
+                <p>Backend developer</p>
+                <p>1 Years Experience</p>
+              </div>
+            </div>
+            <div class="bar">
+              <div class="left">
+                <div class="progress">
+                  <div class="text">
+                    <p>NodeJS</p>
+                    <p>40%</p>
+                  </div>
+                  <div class="full">
+                    <div class="part" style="width: 40%;"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="text">
+                    <p>MongoDB</p>
+                    <p>40%</p>
+                  </div>
+                  <div class="full">
+                    <div class="part" style="width: 40%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="progress">
+                  <div class="text">
+                    <p>PHP</p>
+                    <p>60%</p>
+                  </div>
+                  <div class="full">
+                    <div class="part" style="width: 60%;"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="text">
+                    <p>MySQL</p>
+                    <p>90%</p>
+                  </div>
+                  <div class="full">
+                    <div class="part" style="width: 90%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  Portfolio Page  -->
+    <section id="Portfolio">
+      <h3 class="title"><span>My </span>Projects</h3>
+      <div class="project">
+        <div class="item">
+          <div class="flyer"></div>
+          <div class="bottomm">
+            <div class="title">
+              <p>E-Commerce</p>
+              <p>web</p>
+            </div>
+            <div class="description">Shop smart, shop seamlessly at [Your Website Name]! Dive into a world of
+              convenience and choice with our diverse online marketplace.</div>
+            <div class="language">
+              <button>Js</button>
+              <button>NodeJS</button>
+              <button>ReactJS</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="flyer"></div>
+          <div class="bottomm">
+            <div class="title">
+              <p>E-Commerce</p>
+              <p>web</p>
+            </div>
+            <div class="description">Shop smart, shop seamlessly at [Your Website Name]! Dive into a world of
+              convenience and choice with our diverse online marketplace.</div>
+            <div class="language">
+              <button>Js</button>
+              <button>NodeJS</button>
+              <button>ReactJS</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="flyer"></div>
+          <div class="bottomm">
+            <div class="title">
+              <p>E-Commerce</p>
+              <p>web</p>
+            </div>
+            <div class="description">Shop smart, shop seamlessly at [Your Website Name]! Dive into a world of
+              convenience and choice with our diverse online marketplace.</div>
+            <div class="language">
+              <button>Js</button>
+              <button>NodeJS</button>
+              <button>ReactJS</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="flyer"></div>
+          <div class="bottomm">
+            <div class="title">
+              <p>E-Commerce</p>
+              <p>web</p>
+            </div>
+            <div class="description">Shop smart, shop seamlessly at [Your Website Name]! Dive into a world of
+              convenience and choice with our diverse online marketplace.</div>
+            <div class="language">
+              <button>Js</button>
+              <button>NodeJS</button>
+              <button>ReactJS</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="flyer"></div>
+          <div class="bottomm">
+            <div class="title">
+              <p>E-Commerce</p>
+              <p>web</p>
+            </div>
+            <div class="description">Shop smart, shop seamlessly at [Your Website Name]! Dive into a world of
+              convenience and choice with our diverse online marketplace.</div>
+            <div class="language">
+              <button>Js</button>
+              <button>NodeJS</button>
+              <button>ReactJS</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="flyer"></div>
+          <div class="bottomm">
+            <div class="title">
+              <p>E-Commerce</p>
+              <p>web</p>
+            </div>
+            <div class="description">Shop smart, shop seamlessly at [Your Website Name]! Dive into a world of
+              convenience and choice with our diverse online marketplace.</div>
+            <div class="language">
+              <button>Js</button>
+              <button>NodeJS</button>
+              <button>ReactJS</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+    <!--  Services Page  -->
+    <section id="Services">
+      <h3 class="title"><span>Our </span>Services</h3>
+      <div class="services">
+        <div class="service">
+          <div class="Serv-tittle">
+            <div class="icon"><i class='bx bxs-layout'></i></div>
+            <p>UI/UX Design</p>
+          </div>
+        </div>
+        <div class="service">
+          <div class="Serv-tittle">
+            <div class="icon"><i class='bx bx-pen'></i></div>
+            <p>Graphics Design</p>
+          </div>
+        </div>
+        <div class="service">
+          <div class="Serv-tittle">
+            <div class="icon"><i class='bx bx-code-alt'></i></div>
+            <p>Web Design</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  Blog Page  -->
+    <section id="Blogs">
+      <h3 class="title"><span>My </span>Blogs</h3>
+      <div class="all-blog">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper" id="blogContainer">
+          </div>
+          <div class="icon"><i class='bx bxs-chevron-right-square swiper-button-next'></i></div>
+          <div class="icon"><i class='bx bxs-chevron-left-square swiper-button-prev'></i></div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </div>
+    </section>
+    <!--  Testimonials Page  -->
+    <section id="Testimonials">
+      <h3 class="title"><span>My </span>Testimonials</h3>
+      <div class="testimonials">
+        <div class="all-testmonials">
+          <div class="testminial">
+            <div class="profilecard">
+              <div class="pro">
+                <div class="first"></div>
+              </div>
+              <div class="image">
+                <img src="./Assets/profile.JPG" alt="">
+              </div>
+              <div class="text_data">
+                <span class="name">Joseph MUGISHA</span>
+                <span class="job">Software Engineer</span>
+              </div>
+              <div class="testminial-desc">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. beatae sequi? Lorem ipsu consectetur
+                  adipisicing e. beatae sequi?</p>
+              </div>
+              <div class="button">
+                <button class="btn">More</button>
+              </div>
+            </div>
+          </div>
+          <div class="testminial">
+            <div class="profilecard">
+              <div class="pro">
+                <div class="first"></div>
+              </div>
+              <div class="image">
+                <img src="./Assets/profile.JPG" alt="">
+              </div>
+              <div class="text_data">
+                <span class="name">Joseph MUGISHA</span>
+                <span class="job">Software Engineer</span>
+              </div>
+              <div class="testminial-desc">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. beatae sequi? Lorem ipsu consectetur
+                  adipisicing e. beatae sequi?</p>
+              </div>
+              <div class="button">
+                <button class="btn">More</button>
+              </div>
+            </div>
+          </div>
+          <div class="testminial">
+            <div class="profilecard">
+              <div class="pro">
+                <div class="first"></div>
+              </div>
+              <div class="image">
+                <img src="./Assets/profile.JPG" alt="">
+              </div>
+              <div class="text_data">
+                <span class="name">Joseph MUGISHA</span>
+                <span class="job">Software Engineer</span>
+              </div>
+              <div class="testminial-desc">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. beatae sequi? Lorem ipsu consectetur
+                  adipisicing e. beatae sequi?</p>
+              </div>
+              <div class="button">
+                <button class="btn">More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!--  Contact Page  -->
+    <section id="Contact">
+      <h3 class="title">Contact<span> Me</span></h3>
+      <div class="contacts">
+        <div class="left">
+          <div class="item">
+            <div class="icon">
+              <i class='bx bxs-phone-call'></i>
+            </div>
+            <div class="content">
+              <h3>Call</h3>
+              <h6>+250792418795</h6>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon">
+              <i class='bx bxs-envelope'></i>
+            </div>
+            <div class="content">
+              <h3>Email</h3>
+              <h6>mugishajoseph092@gmail.com</h6>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon">
+              <i class='bx bxs-location-plus'></i>
+            </div>
+            <div class="content">
+              <h3>Location</h3>
+              <h6>Kigali-Rwanada</h6>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <form action="" onsubmit="validateform()">
+            <div class="input">
+              <div class="long">
+                <div class="inputbox">
+                  <input id="contact-name" onkeyup="validateName()" type="text" required="required">
+                  <span>First name</span>
+                  <p id="name-error"
+                    style="position: absolute; z-index: 100; bottom: 2px; right: 10px; background-color: #fff; font-size: .7rem; color: red;">
+                  </p>
+                </div>
+                <div class="inputbox">
+                  <input type="text" required="required" id="contact-lname" onkeyup="validatelName()">
+                  <span>Last Name</span>
+                  <p id="lname-error"
+                    style="position: absolute; z-index: 100; bottom: 2px; right: 8px; background-color: #fff; font-size: .7rem; color: red; padding: 0 5px;">
+                  </p>
+                </div>
+              </div>
+              <div class="long">
+                <div class="inputbox">
+                  <input class="" id="contact-email" onkeyup="validateEmail()" type="text" required="required">
+                  <span>Email</span>
+                  <p id="email-error"
+                    style="position: absolute; z-index: 100; bottom: 2px; right: 10px; background-color: #fff; font-size: .7rem; color: red;">
+                  </p>
+                </div>
+                <div class="inputbox">
+                  <input id="contact-phone" onkeyup="validatePhone()" type="number" required="required">
+                  <span>Telephone</span>
+                  <p id="phone-error"
+                    style="position: absolute; z-index: 100; bottom: 2px; right: 10px; background-color: #fff; font-size: .7rem; color: red;">
+                  </p>
+                </div>
+              </div>
+              <div class="inputbox">
+                <textarea class="in" name="message" onkeyup="validateMessage()" id="contact-message" cols="30"
+                  rows="10"></textarea>
+                <p id="message-error"
+                  style="position: absolute; z-index: 100; bottom: 2px; right: 10px; background-color: #fff; font-size: .7rem; color: red;">
+                </p>
+                <span>
+                  <p>Message</p>
+                </span>
+              </div>
+              <button class="btn in" id="btn">
+                <p>Contact Me</p><i class='bx bx-send'></i>
+              </button>
+              <p id="submit-error"></p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+      </div>
+    </section>
+    <!--  Login Page  -->
+    <section id="sigin">
+      <h3 class="title">Sign <span>In</span></h3>
+      <div class="sigin ">
+        <div class="left">
+          <div class="image"></div>
+        </div>
+        <div class="right" style="display: flex; justify-content: center; align-items: center; ">
+          <div class="sign-content login" id="login">
+            <div class="top">
+              <div class="logo">
+                <img src="./Assets/logoM.png" alt="">
+              </div>
+              <p class="welcom">Welcome back! 👋</p>
+              <p class="login">Login with your account!</p>
+              <div class="google">
+                <img src="./Assets/7123025_logo_google_g_icon.png" alt="" width="33px">
+                <p>Continue with Google</p>
+              </div>
+            </div>
+            <div class="or">
+              <div class="line"></div>
+              <p>or</p>
+              <div class="line"></div>
+            </div>
+            <div class="bottomm">
+              <div class="inputbx">
+                <label for="email">Email </label>
+                <input type="email" name="" id="contact-emaill" class="login-email" onkeyup="validateEmailll()">
+                <p id="emailError" style="font-size: .5rem; color: red;"></p>
+              </div>
+              <div class="inputbx">
+                <label for="password">Password </label>
+                <input type="password" name="" id="password" class="login-password" onkeyup="passwordValidationn()">
+                <p id="passwordError" style="font-size: .5rem; color: red;"></p>
+              </div>
+              <button id="login-btn">Sign in</button>
+              <button id="login-btn-loading" class="loading" style="display: none;">
+                <div style="display: flex; align-items: center; justify-content: center;">
+                  <div class="spin"></div>
+                  <div style="padding-left: 15px;">Sign in</div>
+                </div>
+              </button>
+              <p><u>Forget password?</u></p>
+              <p>Don’t you have an account ? <u onclick="hide()">Sign Up Now</u></p>
+            </div>
+          </div>
+          <div class="hidden sign-content" id="signup">
+            <div class="top">
+              <div class="logo">
+                <img src="./Assets/logoM.png" alt="">
+              </div>
+              <p class="welcom">Create an account</p>
+              <div class="google">
+                <img src="./Assets/7123025_logo_google_g_icon.png" alt="" width="33px">
+                <p>Signup with Google</p>
+              </div>
+            </div>
+            <div class="or">
+              <div class="line"></div>
+              <p>or</p>
+              <div class="line"></div>
+            </div>
+            <div class="bottomm">
+              <div class="inputbx">
+                <label for="Full-name">Full Name </label>
+                <input type="text" name="" id="signup-Full-name">
+              </div>
+              <div class="inputbx">
+                <label for="email">Email </label>
+                <input type="email" name="" id="signup-email">
+              </div>
+              <div class="inputbx">
+                <label for="signup-password">Password </label>
+                <input type="password" name="" id="signup-password">
+              </div>
+              <div class="inputbx">
+                <label for="signup-password">Confirm Password </label>
+                <input type="password" name="" id="signup-confirmPassword">
+              </div>
+              <button id="signup_btn">Sign up</button>
+              <p>Already a member? <u onclick="hide()">Login</u></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="subscribe">
+      <p>Subscribe To Our Updates</p>
+      <div class="in">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <button>Subscribe now</button>
+      </div>
+    </div>
+    <div class="footer-logo">
+      <div class="f-left">
+        <div class="logo">
+          <img src="./Assets/logoM.png" alt="">
+        </div>
+        <div class="get">
+          <p>Get In Touch</p>
+          <div class="social">
+            <i class='bx bxl-facebook-circle'></i>
+            <i class='bx bxl-instagram-alt'></i>
+            <i class='bx bxl-linkedin-square'></i>
+            <i class='bx bxl-github'></i>
+          </div>
+        </div>
+      </div>
+      <div class="links">
+        <ul class="nav-list activee" id="navList">
+          <li><a href="#">Home</a></li>
+          <li><a href="#Skills">Skills</a></li>
+          <li><a href="#Portfolio">Portfolio</a></li>
+          <li><a href="#Services">Services</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Blogs">Blogs</a></li>
+          <li><a href="#Contact">Contact</a></li>
+          <li><a href="#sigin">Login</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+    <p id="copyright"></p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+    integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./Script/swiper-bundle.min.js"></script>
+  <script src="./Script/swipper.js"></script>
+  <script src="./Script/script.js"></script>
+  <script src="./Script/notification.js"></script>
+  <script src="./Script/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,406 @@
+@media (max-width: 920px){
+  #home {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+    margin-top: 5px;
+  }
+  .home-left{
+    width: 100%;
+  }
+  .home-left .top{
+  }
+  .home-left .bottom{
+    justify-content: space-around;
+    padding: 0%;
+  }
+  .home-right{
+    margin-top: 20px;
+  }
+  .home-right img{
+    width: 100%;
+  }
+  #About {
+    width: 100%;
+    height: 60vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding-top: 89px;
+  }
+  .about-left{
+    height: 100%;
+  }
+  .about-right h3.title{
+    margin: 0;
+  }
+  #Portfolio{
+    display: flex;
+    justify-content: center;
+  }
+  .project{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .project .item{
+    margin: 20px 20px 0 20px;
+    width: 100%;
+  }
+
+  .sigin {
+    width: 80%;
+    background-color: var(--back-color);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+  }
+  .bottomm .inputbx {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 5px 0px;
+  }
+  .sigin .left{
+    display: none;
+  }
+  .sigin .right {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer{
+    padding: 10%;
+    margin: 0;
+    
+  }
+  footer .subscribe{
+    margin: 5px 0px;
+  }
+  footer .subscribe{
+    text-align: center;
+  }
+  footer .subscribe .in{
+    flex-direction: column;
+    
+  }
+  footer .subscribe .in input{
+    width: 100%;
+    margin: 5px 0;
+    
+  }
+  footer .subscribe .in button{
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+  }
+  footer .footer-logo{
+    display: flex;
+    align-items: start;
+  }
+  .footer-logo .nav-list{
+    flex-wrap: wrap;
+    text-align: right;
+  }
+  footer .footer-logo .f-left {
+    display: flex;
+    align-items: start;
+  }
+  .footer-logo .f-left{
+    flex-direction: column-reverse;
+    align-items: start;
+  }
+  .footer-logo .f-left .get .social{
+    display: flex;
+  }
+  #copyright{
+    text-align: center;
+    color: var(--secondText-color);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+  .header-links .sidebar {
+    width: 100%;
+    transition: all 0.2s ease-in;
+  }
+  .menu-icon {
+    display: block;
+  }
+  #home {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 0px;
+  }
+  body{
+    margin: 0;
+  }
+  main {
+    margin: 21% 6%;
+    width: 82%;
+    display: flex;
+    flex-direction: column;
+  }
+  #home .home-right {
+    width: 100%;
+  }
+  #home .home-right img {
+    margin-top: 20px;
+    
+  }
+  #home .home-left {
+    width: 100%;
+  }
+  #home .home-left .top {
+    width: 100%;
+    padding: 0;
+  }
+  #home .home-left .Full-Stack {
+    width: 100%;
+  }
+  #home .home-left .Full-Stack .full {
+    font-size: 1.5rem;
+  }
+  #home .home-left .bottom {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+  #home .home-left .bottom .btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #About {
+    width: 110%;
+    gap: 0px;
+    padding-top: 100px;
+    height: 80vh;
+  }
+ h3.title {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  #About h3.title {
+    margin: 0 20px;
+  }
+  #About .about-left {
+    display: none;
+  }
+  #About .about-right .right-top {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0%;
+  }
+  #About .about-right .right-bootom .btn {
+    padding: 20px 0px;
+  }
+
+  #Skills {
+    margin-top: 100px;
+    padding: 0;
+    width: 110%;
+    padding-top: 26px;
+  }
+
+  #Skills .skill-cont {
+    flex-direction: column;
+  }
+  #Skills .skill-cont .technologies {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  #Skills .skill-cont .technologies .item {
+    width: 90%;
+    margin: 0 40px 0px 15px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .technologies .item .icon {
+    margin-right: 10px;
+  }
+  #Skills .skills {
+    width: 100%;
+  }
+  .skills .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9d9d988;
+    border-radius: 10px;
+    gap: 20px;
+  }
+  .end div.titlee {
+    margin: 0;
+    padding: 0%;
+  }
+  .skills .header .titlee p:first-child {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+  .skills .header .title p:nth-child(2) {
+    color: var(--seconadry-color);
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+  }
+  .skills .header .titlee p:nth-child(2) {
+    margin: 5px 0;
+  }
+  .progress{
+    padding: 0;
+  }
+  .bar {
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0;
+  }
+  .bar .left {
+    width: 100%;
+  }
+  
+  .bar .right {
+    width: 100%;
+  }
+
+  #Services .service {
+    width: 100vw;
+    margin-bottom: 20px;
+  }
+  .all-testmonials{
+  flex-direction: column;
+  }
+  #Testimonials .profilecard {
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+  }
+  .contacts{
+    flex-wrap: wrap;
+  }
+  .contacts .right{
+    width: 100%;
+  }
+  .contacts .right .input .long{
+    flex-direction: column;
+
+  }
+  .contacts .right .input .long input{
+    width: 222%;
+  }
+  .contacts .right .input span{
+    z-index: 3;
+  }
+  div.right .input .btn p{
+    padding: 5px;
+    margin: 0;
+  }
+  #sigin{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+  }
+  .sigin{
+    width: 100%;
+    height: 100vh;
+  }
+  .sigin .left{
+    display: none;
+  }
+  .sigin .right{
+    width: 100%;
+  }
+  footer{
+    padding: 0 5%;
+    margin: 0;
+    
+  }
+  footer .subscribe{
+    margin: 40px 0px;
+  }
+  footer .subscribe{
+    text-align: center;
+  }
+  footer .subscribe .in{
+    flex-direction: column;
+    
+  }
+  footer .subscribe .in input{
+    width: 100%;
+    margin: 5px 0;
+    
+  }
+  footer .subscribe .in button{
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  footer .footer-logo{
+    display: flex;
+    align-items: start;
+  }
+  .footer-logo .nav-list{
+    flex-direction: column;
+    text-align: right;
+  }
+  footer .footer-logo .f-left {
+    display: flex;
+    align-items: start;
+  }
+  .footer-logo .f-left{
+    flex-direction: column-reverse;
+    align-items: start;
+  }
+  .footer-logo .f-left .get .social{
+    display: flex;
+  }
+  #copyright{
+    text-align: center;
+    color: var(--secondText-color);
+  }
+}
+
+
+

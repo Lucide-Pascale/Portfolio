@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph | Blogs</title>
+    <link rel="stylesheet" href="./Styles/style.css">
+    <link rel="stylesheet" href="./Styles/singleBlog.css">
+    <link rel="stylesheet" href="./Styles/mobile.css">
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/f559c39257.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./Assets/logoM.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/iziToast.min.css">
+    <script src="js/iziToast.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <body style="white-space: 0;">
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="./Assets/logoM.png" alt="" />
+                </div>
+                <div class="header-links">
+                    <ul class="nav-list activee sidebar " id="navList">
+                        <li onclick=hideSidebar() class="menu-icon"><i class="fa-solid fa-xmark"></i></li>
+                        <li class="active mobile-links" onclick="clicked_links(this)"><a href="#">Home</a></li>
+                        <li onclick="clicked_links(this)" class="mobile-links"><a href="index.html#About">About</a></li>
+                        <li onclick="clicked_links(this)" class="mobile-links"><a href="index.html#Skills">Skills</a></li>
+                        <li onclick="clicked_links(this)" class="mobile-links"><a href="index.html#Portfolio">Portfolio</a></li>
+                        <li onclick="clicked_links(this)" class="mobile-links"><a href="index.html#Services">Services</a></li>
+                        <li onclick="clicked_links(this)" class="mobile-links"><a href="index.html#Blogs">Blogs</a></li>
+                        <li onclick="clicked_links(this)" class="mobile-links"><a href="index.html#Contact">Contact</a></li>
+                        <li class="active">
+                            <a href="#"><i class="bx bxs-moon"></i></a>
+                        </li>
+                    </ul>
+                    <ul class="nav-list activee" id="navList">
+                        <li onclick="clicked_link(this)" class="hideOnMobile active"><a href="#">Home</a></li>
+                        <li onclick="clicked_link(this)" class="hideOnMobile"><a href="index.html#About">About</a></li>
+                        <li onclick="clicked_link(this)" class="hideOnMobile"><a href="index.html#Skills">Skills</a></li>
+                        <li onclick="clicked_link(this)" class="hideOnMobile"><a href="index.html#Portfolio">Portfolio</a></li>
+                        <li onclick="clicked_link(this)" class="hideOnMobile"><a href="index.html#Services">Services</a></li>
+                        <li onclick="clicked_link(this)" class="hideOnMobile"><a href="index.html#Blogs">Blogs</a></li>
+                        <li onclick="clicked_link(this)" class="hideOnMobile"><a href="index.html#Contact">Contact</a></li>
+                        <li class="hideOnMobile active">
+                            <i class="bx bxs-moon" id="darkModeToggle"></i></a>
+                        </li>
+                        <li onclick="showSidebar()" class="menu-icon"><i class='bx bx-menu'></i></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+        <main>
+            <div class="blog-container">
+                <div>
+                    <div class="top post">
+                        <div class="special-desc">
+                            <div class="single-article-date" id="single-date">12 jan 2024</div>
+                            <div class="single-article-title" id="singleBlog_title">Unleashing the Power of Productivity: A
+                                Mac Laptop Experience
+                            </div>
+                        </div>
+                        <div class="div">
+                            <div class="single-article-pic"><img src="./Assets/mac.jpg" alt="unavailable" id="image"></div>
+                        </div>
+                        <div class="conts">
+                            <div class="single-article-desc">
+                                <p id="singleblog_content">In the ever-evolving landscape of technology, Mac laptops stand
+                                    out as sleek and powerful
+                                    companions for professionals, creatives, and everyday users alike. This short blog
+                                    explores
+                                    the
+                                    unique features and advantages that make Mac laptops the go-to choice for many.
+    
+                                    Elegance Meets Power:
+                                    One glance at a Mac laptop, and you're captivated by its elegant design. The marriage of
+                                    form
+                                    and function is evident, with the slim aluminum body housing cutting-edge technology.
+                                    But
+                                    it's
+                                    not just about aesthetics – Mac laptops boast powerful hardware that delivers seamless
+                                    performance.
+    
+                                    Intuitive macOS Experience:
+                                    The heart of every Mac laptop lies in macOS, Apple's operating system known for its
+                                    user-friendly interface. Navigating through tasks becomes second nature, making the
+                                    overall
+                                    user
+                                    experience intuitive and enjoyable.
+    
+                                    Retina Display:
+                                    Mac laptops are renowned for their stunning Retina displays, offering vibrant colors,
+                                    sharp
+                                    text, and true-to-life images. Whether you're editing photos, watching videos, or simply
+                                    browsing the web, the Retina display elevates the visual experience.
+    
+                                    Productivity Boosters:
+                                    From the innovative touch bar on certain models to the fluidity of multi-touch gestures
+                                    on
+                                    the
+                                    trackpad, Mac laptops are designed to enhance productivity. Switching between
+                                    applications,
+                                    launching Mission Control, and executing commands become seamless, allowing users to
+                                    focus
+                                    on
+                                    their work.
+    
+                                    Optimized Software Ecosystem:
+                                    Apple's commitment to a seamless ecosystem extends to software. Mac laptops come
+                                    pre-loaded
+                                    with
+                                    a suite of applications that cater to various needs, from creative endeavors with iMovie
+                                    and
+                                    GarageBand to productivity with Pages, Numbers, and Keynote.
+    
+                                    Privacy and Security:
+                                    Mac laptops are engineered with a strong emphasis on privacy and security. Features like
+                                    Touch
+                                    ID and the T2 Security Chip provide secure access to your device and encrypt sensitive
+                                    information, ensuring peace of mind for users.
+    
+                                    Long-lasting Battery Life:
+                                    Mac laptops are designed to keep up with your day. The optimized hardware and software
+                                    integration contribute to impressive battery life, allowing users to work, create, and
+                                    play
+                                    for
+                                    extended periods without constantly searching for a power outlet.
+    
+                                    Seamless Integration with Other Apple Devices:
+                                    For users in the Apple ecosystem, owning a Mac laptop means effortless integration with
+                                    other
+                                    devices like iPhones, iPads, and Apple Watches. Features like Handoff, Universal
+                                    Clipboard,
+                                    and
+                                    AirDrop enhance the synergy between your Apple devices.
+    
+                                    Conclusion:
+                                    In a world where technology is a crucial part of our daily lives, Mac laptops shine as
+                                    reliable,
+                                    powerful, and beautifully crafted devices. Whether you're a creative professional, a
+                                    business
+                                    executive, or a student, the Mac laptop experience is designed to elevate your
+                                    productivity
+                                    and
+                                    provide a seamless blend of style and substance. With each iteration, Apple continues to
+                                    redefine what it means to work and create on a laptop, making Mac a symbol of innovation
+                                    and
+                                    excellence in the tech industry.</p>
+                            </div>
+                            <div class="single-article-reactions">
+                                <div class="single-article-comment">
+                                    <i class="fa-regular fa-comment fa-flip-horizontal" id="comment-img"
+                                        style="color:#42288C;"></i>
+                                    <p id="no-comments">0</p>
+                                </div>
+                                <div class="single-article-likes">
+                                    <i class="bx bx-heart heart" id="like-img" style="cursor: pointer; color:#42288C;"></i>
+                                    <p id="no-likes">0</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="discussion">
+                    <div class="discussion__header">
+                        <div class="authed-user">
+                        </div>
+                        <form id="newcomment__form">
+                            <textarea tabindex="1" cols="150" rows="4" minlength="5" required
+                                placeholder="Write a comment..."></textarea>
+                            <div class="newcomment__toolbar">
+                                <button id="reset-button" class="button--secondary" tabindex="3" type="button">
+                                    Reset
+                                </button>
+                                <button id="confirm-buttonn" class="button--primary" tabindex="3" type="button">
+                                    Comment
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="discussion__comments">
+                        <!-- will be generated -->
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+            integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="./Script/script.js"></script>
+        <script src="./Script/blog.js"></script>
+        <script src="./Script/comment.js"></script>
+    </body>
+
+</html>
