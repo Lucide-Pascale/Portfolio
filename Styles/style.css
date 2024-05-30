@@ -575,6 +575,13 @@ h3.title span {
   height: 200px;
   border-radius: 10px;
 }
+.project .item .flyer.magenta {
+  background-image: url("../Assets/magenta.jpg");
+}
+.project .item .flyer.gura {
+  background-image: url("../Assets/home\ page.png");
+}
+
 
 .project .bottomm {
   width: fit-content;
