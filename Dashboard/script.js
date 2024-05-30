@@ -1,11 +1,11 @@
 const expand_btn = document.querySelector(".expand-btn");
-if(!localStorage.getItem('jwt')){
-  window.location.href='https://mugishaj092.github.io/my-brand/'
+if (!localStorage.getItem("jwt")) {
+  window.location.href = "https://mugishaj092.github.io/my-brand/";
 }
 const currentUserString = localStorage.getItem("user");
 const currentUser = JSON.parse(currentUserString);
-if(currentUser.role=='user'){
-  window.location.href='https://mugishaj092.github.io/my-brand/'
+if (currentUser.role == "user") {
+  window.location.href = "https://mugishaj092.github.io/my-brand/";
 }
 
 let activeIndex;
@@ -210,8 +210,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     deleteIcons.forEach((icon) => {
       icon.addEventListener("click", (event) => {
         const userId = event.target.dataset.userid;
-        console.log(userId); // Get user ID from data attribute
-        deleteUser(userId, authToken); // Pass user ID to deleteUser function
+        console.log(userId);
+        deleteUser(userId, authToken);
       });
     });
   } catch (error) {
@@ -555,7 +555,7 @@ const posting_Blog_func = async (title, content, cover) => {
       window.location.reload();
     }, 2000);
   } catch (e) {
-    isloading=true
+    isloading = true;
     if (isloading) {
       document.getElementById("submit-button").style.display = "block";
       document.getElementById("submit-buttonn").style.display = "none";
@@ -655,7 +655,6 @@ fetchBlogPosts();
 const updateDirect = (blogId) => {
   window.location.href = "update.html?blog_id=" + blogId + "#blogs";
 };
-
 
 const user_name = document.getElementById("user-name");
 user_name.innerHTML = currentUser.name;
