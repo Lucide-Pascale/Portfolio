@@ -47,12 +47,12 @@ function updateCopyright() {
     var currentYear = getCurrentYear();
     var copyrightText =
       startYear === currentYear
-        ? "© " + startYear + " All Rights Reserved by MUGISHA Joseph."
+        ? "© " + startYear + " All Rights Reserved by Lucide."
         : "© " +
           startYear +
           "-" +
           currentYear +
-          " All Rights Reserved by MUGISHA Joseph.";
+          " All Rights Reserved by Lucide.";
 
     copyrightElement.textContent = copyrightText;
   }
